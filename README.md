@@ -189,15 +189,24 @@
 thinkmove-design-system/
 ├── README.md                    # 世界観・思想の核（このファイル）
 ├── assets/
-│   ├── logo-dark.png            # 会社ロゴ
-│   └── logo-white.png
+│   ├── logo-dark.png            # 会社ロゴ（tools版）
+│   └── logo-white.png           # 会社ロゴ（tools版・白抜き）
 ├── lp/                          # thinkmove.jp LP の実素材
+│   ├── brand/                   # LP公式ブランド素材
+│   │   ├── logo-transparent.png # 公式ロゴ（navy accent、LP掲載版、2700×571）
+│   │   └── desk-scene.png       # プロフィールページ装飾イラスト
 │   ├── screenshots/             # LPの実画面（主要5点）
 │   │   ├── design-home-fullpage.png
 │   │   ├── live-lp-hero.png
 │   │   ├── live-lp-empathy.png
 │   │   ├── lp-comparison-table.png
 │   │   └── lp-case-makuake-howma.png
+│   ├── manga/                   # 4コマ漫画（「重たい話を重たく伝えない」の象徴）
+│   │   ├── 4koma_comic_A.webp
+│   │   ├── 4koma_pattern_B.webp
+│   │   ├── 4koma_pattern_C.webp
+│   │   ├── 4koma_pattern_D.webp
+│   │   └── 4koma_pattern_E.webp
 │   ├── css/                     # LPのCSS
 │   │   ├── style.css
 │   │   └── lp-cocreation.css
@@ -206,11 +215,14 @@ thinkmove-design-system/
 │   │   ├── 02_about.md
 │   │   ├── 03_consultation.md
 │   │   └── 09_philosophy.md
-│   ├── logos/                   # クライアントロゴ
+│   ├── logos/                   # 支援先クライアントロゴ
 │   │   ├── collabit-logo.png
-│   │   └── makuake_logo.png
+│   │   ├── freeweb-logo.png
+│   │   ├── makuake_logo.png
+│   │   └── zigexn-logo.png
 │   └── profile/                 # 代表者プロフィール写真
-│       └── toyokura-shota.jpg   # thinkmove.jp/company/profile/ 掲載の公式写真
+│       ├── toyokura-shota.jpg   # 森背景（thinkmove.jp/company/profile/）
+│       └── toyokura-office.png  # オフィス背景（スクエア、トップページ掲載）
 └── sync.sh                      # 本体モノレポから再同期
 ```
 

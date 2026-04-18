@@ -43,10 +43,34 @@ cp "$LP_DIR/assets/logos/collabit-logo.png" "$SELF_DIR/lp/logos/collabit-logo.pn
 cp "$LP_DIR/assets/logos/makuake_logo.png" "$SELF_DIR/lp/logos/makuake_logo.png"
 echo "  ✓ lp/logos/{collabit,makuake}-logo.png"
 
-# Profile photo (LP本体から直接取得。WordPress Media URLs)
-PROFILE_URL="https://thinkmove.jp/wp-content/uploads/2024/11/IMG_3759.jpg"
-curl -fsSL "$PROFILE_URL" -o "$SELF_DIR/lp/profile/toyokura-shota.jpg"
-echo "  ✓ lp/profile/toyokura-shota.jpg (from live LP)"
+# LP本体から直接取得（WordPress media + SWELL子テーマ）
+BASE="https://thinkmove.jp"
+TH="$BASE/wp-content/themes/swell_child/img"
+UP="$BASE/wp-content/uploads"
+
+# Profile photos (2種類)
+curl -fsSL "$UP/2024/11/IMG_3759.jpg" -o "$SELF_DIR/lp/profile/toyokura-shota.jpg"
+curl -fsSL "$UP/2025/04/翔太プロフィール画像（オフィス背景）-1024x1024.png" -o "$SELF_DIR/lp/profile/toyokura-office.png"
+echo "  ✓ lp/profile/toyokura-{shota,office}.{jpg,png}"
+
+# Brand assets
+mkdir -p "$SELF_DIR/lp/brand"
+curl -fsSL "$UP/2024/11/thinkmovenotlogo_transparent.png" -o "$SELF_DIR/lp/brand/logo-transparent.png"
+curl -fsSL "$UP/2024/11/4.png" -o "$SELF_DIR/lp/brand/desk-scene.png"
+echo "  ✓ lp/brand/{logo-transparent,desk-scene}.png"
+
+# 4コマ漫画 (SWELL子テーマから)
+mkdir -p "$SELF_DIR/lp/manga"
+for f in 4koma_comic_A 4koma_pattern_B 4koma_pattern_C 4koma_pattern_D 4koma_pattern_E; do
+  curl -fsSL "$TH/manga/$f.webp" -o "$SELF_DIR/lp/manga/$f.webp"
+done
+echo "  ✓ lp/manga/4koma_{comic_A,pattern_B-E}.webp"
+
+# 追加クライアントロゴ (SWELL子テーマから)
+for f in freeweb-logo zigexn-logo; do
+  curl -fsSL "$TH/clients/$f.png" -o "$SELF_DIR/lp/logos/$f.png"
+done
+echo "  ✓ lp/logos/{freeweb,zigexn}-logo.png"
 
 echo ""
 echo "✅ Sync complete. Review with: git diff"
