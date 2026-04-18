@@ -204,6 +204,21 @@ thinkmove-design-system/
 │   │   └── 4koma_{comic_A,pattern_B-E}.webp
 │   ├── css/
 │   │   └── style.css            # SWELL子テーマCSS（live、1429行）
+│   ├── content/                 # ライブLPから取得したページ（14本、Markdown変換）
+│   │   ├── top.md               # トップ /
+│   │   ├── company.md           # 会社情報 /company/
+│   │   ├── company-profile.md   # 代表プロフィール /company/profile/
+│   │   ├── contact.md           # 問い合わせ /contact/
+│   │   ├── download.md          # ダウンロード /download/
+│   │   ├── case-howma.md        # HowMa事例 /case/howma/
+│   │   ├── case-makuake.md      # Makuake事例 /case/makuake/
+│   │   ├── case-customer-voice.md # お客様の声 /case/customer-voice/
+│   │   ├── lp-co-creation.md    # 共創LP /lp/co-creation/
+│   │   ├── lp-ai.md             # AI LP /lp/ai/
+│   │   ├── lp-partner.md        # パートナーLP /lp/partner/
+│   │   ├── lp-production.md     # 制作LP /lp/production/
+│   │   ├── blog-judgment-as-a-service.md # 判断をサービスとして
+│   │   └── blog-2026-seo.md     # 2026年SEO
 │   ├── logos/                   # 支援先クライアントロゴ
 │   │   ├── collabit-logo.png
 │   │   ├── freeweb-logo.png
@@ -228,7 +243,7 @@ thinkmove-design-system/
 
 ### Content について
 
-本リポジトリには **LP本体のコピー原本（Markdown）は含まれていません**。理由：モノレポ内の `projects/thinkmove.jp/website-content/*.md` は多くがドラフト（未公開）で、live URL と対応しないものが多数あったため削除。Pencil等の AI デザインツールは、必要に応じて [thinkmove.jp](https://thinkmove.jp/) を直接クロールすること。
+`lp/content/` には **ライブ thinkmove.jp からクロールした 14 ページ**を Markdown 変換して収録。`sync.sh` で再取得可能（要 `pandoc`）。モノレポ内の未公開ドラフト（`projects/thinkmove.jp/website-content/*.md`）は**含めない方針**。
 
 ---
 

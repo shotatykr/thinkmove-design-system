@@ -35,6 +35,55 @@ echo "  ✓ lp/screenshots/*.png (5 files)"
 curl -fsSL "$BASE/wp-content/themes/swell_child/style.css" -o "$SELF_DIR/lp/css/style.css"
 echo "  ✓ lp/css/style.css (live swell_child/style.css)"
 
+# LP content (live本体から HTML→Markdown変換、14ページ)
+# 要 pandoc: brew install pandoc
+if command -v pandoc >/dev/null 2>&1; then
+  declare -A CONTENT_PAGES=(
+    [top]="/"
+    [company]="/company/"
+    [company-profile]="/company/profile/"
+    [contact]="/contact/"
+    [download]="/download/"
+    [case-howma]="/case/howma/"
+    [case-makuake]="/case/makuake/"
+    [case-customer-voice]="/case/customer-voice/"
+    [lp-co-creation]="/lp/co-creation/"
+    [lp-ai]="/lp/ai/"
+    [lp-partner]="/lp/partner/"
+    [lp-production]="/lp/production/"
+    [blog-judgment-as-a-service]="/blog/judgment-as-a-service/"
+    [blog-2026-seo]="/blog/2026-seo/"
+  )
+
+  for key in "${!CONTENT_PAGES[@]}"; do
+    url="$BASE${CONTENT_PAGES[$key]}"
+    cleaned=$(curl -sL "$url" | python3 -c "
+import sys, re
+html = sys.stdin.read()
+m = re.search(r'<main[^>]*>(.*?)</main>', html, re.DOTALL)
+content = m.group(1) if m else html
+content = re.sub(r'<div[^>]*class=\"[^\"]*(?:wp-block-group|wp-block-columns|swell-block|swl-|c-[a-z]+|u-[a-z]+|l-[a-z]+|is-style|is-layout)[^\"]*\"[^>]*>', '', content)
+content = re.sub(r'</div>', '', content)
+content = re.sub(r'<span[^>]*class=\"[^\"]*(?:swl-|swell-)[^\"]*\"[^>]*>', '', content)
+content = re.sub(r'</span>', '', content)
+content = re.sub(r'<img[^>]*src=\"data:image/gif;base64[^\"]*\"[^>]*>', '', content)
+content = re.sub(r'<figure[^>]*class=\"[^\"]*wp-block-embed[^\"]*\"[^>]*>.*?</figure>', '', content, flags=re.DOTALL)
+content = re.sub(r'<nav[^>]*>.*?</nav>', '', content, flags=re.DOTALL)
+content = re.sub(r'<figure[^>]*>\s*</figure>', '', content)
+content = re.sub(r'\n\s*\n\s*\n+', '\n\n', content)
+sys.stdout.write(content)
+")
+    md=$(echo "$cleaned" | pandoc -f html -t gfm --wrap=none 2>/dev/null)
+    {
+      printf "> **URL**: %s\n> **Fetched**: %s\n\n---\n\n" "$url" "$(date +%Y-%m-%d)"
+      echo "$md"
+    } > "$SELF_DIR/lp/content/${key}.md"
+  done
+  echo "  ✓ lp/content/*.md (14 files from live LP)"
+else
+  echo "  ⚠ pandoc not found — skipping content sync. Install: brew install pandoc"
+fi
+
 # Client logos (モノレポ + LPテーマ)
 cp "$LP_DIR/assets/logos/collabit-logo.png" "$SELF_DIR/lp/logos/collabit-logo.png"
 cp "$LP_DIR/assets/logos/makuake_logo.png" "$SELF_DIR/lp/logos/makuake_logo.png"

@@ -1,0 +1,192 @@
+> **URL**: https://thinkmove.jp/company/
+> **Fetched**: 2026-04-19
+
+---
+
+<div class="post_content">
+
+<figure class="wp-block-image size-full is-resized u-mb-ctrl u-mb-30">
+<img src="https://thinkmove.jp/wp-content/uploads/2024/11/thinkmovenotlogo_transparent.png" class="wp-image-454" style="width:800px" decoding="async" srcset="https://thinkmove.jp/wp-content/uploads/2024/11/thinkmovenotlogo_transparent.png 2700w, https://thinkmove.jp/wp-content/uploads/2024/11/thinkmovenotlogo_transparent-300x63.png 300w, https://thinkmove.jp/wp-content/uploads/2024/11/thinkmovenotlogo_transparent-1024x217.png 1024w, https://thinkmove.jp/wp-content/uploads/2024/11/thinkmovenotlogo_transparent-768x162.png 768w, https://thinkmove.jp/wp-content/uploads/2024/11/thinkmovenotlogo_transparent-1536x325.png 1536w, https://thinkmove.jp/wp-content/uploads/2024/11/thinkmovenotlogo_transparent-2048x433.png 2048w" sizes="(max-width: 2700px) 100vw, 2700px" width="2700" height="571" />
+</figure>
+
+スクロールできます
+
+<figure class="wp-block-table is-style-simple u-mb-ctrl u-mb-50" data-table-scrollable="sp">
+<table style="--table-width:800px;">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td>社名</td>
+<td>シンクムーブ株式会社（ThinkMove Inc.）</td>
+</tr>
+<tr>
+<td>法人番号</td>
+<td><a href="https://www.houjin-bangou.nta.go.jp/henkorireki-johoto.html?selHouzinNo=1011001166563">1011001166563</a></td>
+</tr>
+<tr>
+<td>インボイス番号</td>
+<td><a href="https://www.invoice-kohyo.nta.go.jp/regno-search/detail?selRegNo=1011001166563" data-type="link" data-id="https://www.invoice-kohyo.nta.go.jp/regno-search/detail?selRegNo=1011001166563">T1011001166563</a></td>
+</tr>
+<tr>
+<td>代表取締役</td>
+<td><a href="https://thinkmove.jp/company/profile/" data-type="page" data-id="648">豊藏 翔太</a></td>
+</tr>
+<tr>
+<td data-has-cell-bg="1" data-text-color="black"> 設立年月</td>
+<td>2024年12月</td>
+</tr>
+<tr>
+<td>事業内容</td>
+<td>(1)インターネットを利用したマーケティング支援<br />
+(2)検索エンジン最適化に関するコンサルティング及び運営支援<br />
+(3)ウェブサイト及びウェブコンテンツの企画、制作、運営及び管理<br />
+(4)人工知能を活用したシステム及びソリューションの企画、開発及び運用<br />
+(5)マーケティング、検索エンジン最適化及び人工知能に関するセミナー、講演及び教育プログラムの企画、実施及び運営<br />
+(6)デジタルコンテンツ及び教育コンテンツの企画、制作、販売及び配信<br />
+(7)前各号に附帯又は関連する一切の事業</td>
+</tr>
+<tr>
+<td>主要取引先</td>
+<td>アイオイクス株式会社</td>
+</tr>
+<tr>
+<td data-has-cell-bg="1" data-text-color="black"> 所在地</td>
+<td><a href="https://www.google.com/maps/place/%E3%80%92150-0041+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%8B%E8%B0%B7%E5%8C%BA%E7%A5%9E%E5%8D%97%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%91%E2%88%92%EF%BC%94+FPG%E3%83%AA%E3%83%B3%E3%82%AF%E3%82%B9%E7%A5%9E%E5%8D%97+5F/@35.662291,139.7001755,18z/data=!3m1!5s0x60188b586fc76b67:0x635d56f94e6f2961!4m14!1m7!3m6!1s0x60188df1ca8e3a9b:0x5fa820a6678bcad7!2z5p2x5Lqs6YO95riL6LC35Yy656We5Y2X77yR5LiB55uu77yR77yR77yN77yURlBH44Oq44Oz44Kv44K556We5Y2X77yV6ZqO!8m2!3d35.6625228!4d139.7010076!16s%2Fg%2F11wj44yqd5!3m5!1s0x60188ca8840cadd3:0xe53f5b11abd6ef04!8m2!3d35.6625228!4d139.7010076!16s%2Fg%2F11y92x03km?entry=ttu&amp;g_ep=EgoyMDI1MDExNC4wIKXMDSoASAFQAw%3D%3D" data-type="link" data-id="https://www.google.com/maps/place/%E3%80%92150-0041+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%8B%E8%B0%B7%E5%8C%BA%E7%A5%9E%E5%8D%97%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%91%E2%88%92%EF%BC%94+FPG%E3%83%AA%E3%83%B3%E3%82%AF%E3%82%B9%E7%A5%9E%E5%8D%97+5F/@35.662291,139.7001755,18z/data=!3m1!5s0x60188b586fc76b67:0x635d56f94e6f2961!4m14!1m7!3m6!1s0x60188df1ca8e3a9b:0x5fa820a6678bcad7!2z5p2x5Lqs6YO95riL6LC35Yy656We5Y2X77yR5LiB55uu77yR77yR77yN77yURlBH44Oq44Oz44Kv44K556We5Y2X77yV6ZqO!8m2!3d35.6625228!4d139.7010076!16s%2Fg%2F11wj44yqd5!3m5!1s0x60188ca8840cadd3:0xe53f5b11abd6ef04!8m2!3d35.6625228!4d139.7010076!16s%2Fg%2F11y92x03km?entry=ttu&amp;g_ep=EgoyMDI1MDExNC4wIKXMDSoASAFQAw%3D%3D">〒150-0041 東京都渋谷区神南1-11-4 FPGリンクス神南 5F</a></td>
+</tr>
+<tr>
+<td>電話番号</td>
+<td>03-6675-1852</td>
+</tr>
+<tr>
+<td>顧問税理士</td>
+<td><a href="https://suehirotax.jp/" data-type="link" data-id="https://suehirotax.jp/">タクスリンク税理士事務所</a><br />
+<a href="https://suehirotax.jp/office">末廣 大地 税理士</a></td>
+</tr>
+</tbody>
+</table>
+</figure>
+
+**FOUNDING MOTIVATION**
+
+## 創業動機
+
+<div class="wp-block-media-text__content">
+
+AIによって、一人ひとりの生産性は以前にも増して大きく向上しました。個人の力を拡張した一方で、専門性の高い人間同士がコラボレーションすることでしか成し遂げられない大きなことも依然として多くあります。これからの時代は、少人数でありながらも、専門性を最大限に活かし、必要なリソースを素早く繋げる“**機動力**”が重要だと確信しています。
+
+私はこれまで、ITコンサル、営業、エンジニア、事業企画など、異なる専門領域を横断しながら事業運営・プロジェクト管理を手がけてきました。その中で痛感したのは、「**イシュードリブンで柔軟性を持ったチーム**」こそが時代をリードできるということです。市場は常に変化し、従来のように1年先の詳細計画を立てることが難しい今こそ、日々の改善や機動的なアクションで成果を積み重ねていく姿勢が求められます。
+
+特にSEOやAIといったデジタル領域は、技術の進化が早く、常識が絶えず書き換わる分野です。だからこそ「**人として信頼される**」スタンスを大切にしながら、多様な知見を結集して顧客に必要な価値を提供したい――この信念から、シンクムーブ株式会社を創業しました。
+
+私たちがめざすのは、単なる外部支援者ではなく、**顧客組織内に“進化のきっかけ”を共創するパートナー**です。技術・マーケティング・コンサルの垣根を超え、専門家同士が連携する新しいチームの形こそが、今後のビジネスを大きく前進させると信じています。
+
+<figure class="wp-block-media-text__media">
+<img src="https://thinkmove.jp/wp-content/uploads/2025/01/project-completion_01-1024x1009.png" class="wp-image-1285 size-full" decoding="async" srcset="https://thinkmove.jp/wp-content/uploads/2025/01/project-completion_01-1024x1009.png 1024w, https://thinkmove.jp/wp-content/uploads/2025/01/project-completion_01-300x296.png 300w, https://thinkmove.jp/wp-content/uploads/2025/01/project-completion_01-768x757.png 768w, https://thinkmove.jp/wp-content/uploads/2025/01/project-completion_01.png 1478w" sizes="(max-width: 1024px) 100vw, 1024px" width="1024" height="1009" />
+</figure>
+
+**MISSION**
+
+## ミッション
+
+**「人の思考とAIの力を掛け合わせ、“いま動ける最善”を実行し、ビジネスを進化させる。」**
+
+- 1年先の大きな計画も大切にしつつ、まずは今日・明日の行動で成果につなげる
+- 顧客や社会が抱える本質的な課題を見極め、素早い検証と改善を繰り返す
+
+**VISION**
+
+## ビジョン
+
+**「点と点をつなぎ、新しい“面”を描き出す──人とAIが共創するマーケティングの次なる常識を創る。」**
+
+- SEOやAI、コンテンツや組織カルチャーなど一見バラバラな要素を融合し、大きな価値の“面”を創出
+- 組織の仕組みや教育も含め、クライアントの「進化のきっかけ」を共に生み出すパートナーへ
+
+**VALUE**
+
+## バリュー
+
+私たちは、以下の5つの考え方を大切にしています。
+
+**01**
+
+**Think & Move**
+
+―**考え抜き、動き続ける**―
+
+常に「なぜ？」を問い、本質的な課題を捉え、素早く行動する。小さく試し、検証し、改善を重ねることで大きな変化を引き寄せる。
+
+<div class="wp-block-spacer" style="height:12px" aria-hidden="true">
+
+**02**
+
+**Issue Driven Thinking**
+
+―**課題を軸とした思考**―
+
+依頼の背景にある「真の課題」を徹底的に考え抜き、先回りで提案する。「どうすれば顧客にとって最良か」を常に問い、枠にとらわれないアプローチを選ぶ。
+
+<div class="wp-block-spacer" style="height:12px" aria-hidden="true">
+
+**03**
+
+**Expand Curiosity**
+
+―**好奇心の幅を広げる**―
+
+自分の専門領域に閉じこもらず、周辺分野やテクノロジーの動向を常にキャッチアップ。新しい知見を得たら即、プロジェクトやサービスに活かして競争力を高める。
+
+**04**
+
+**Professional** **as an Individual**
+
+―**個としてプロフェッショナルである**―
+
+自分にしかない強みを最大限に活かし、結果に対して当事者意識を持って向き合う。まずは「良い人として信頼される」ことを大切にし、チームや顧客との信頼を築く。
+
+**05**
+
+**Stay Flexible**
+
+―**柔軟であり続ける**―
+
+今あるベストプラクティスに固執せず、変化を前向きに捉えて自分をアップデートする。「変わらない」より「変えてみよう」がイノベーションを生む土壌になる。
+
+**SLOGAN**
+
+**人の思考とAIで、**\
+**マーケティングは進化する。**
+------------------------------
+
+<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center" style="grid-template-columns:30% auto">
+
+<figure class="wp-block-media-text__media">
+<img src="https://thinkmove.jp/wp-content/uploads/2024/11/strategy_01-1013x1024.png" class="wp-image-427 size-full" decoding="async" srcset="https://thinkmove.jp/wp-content/uploads/2024/11/strategy_01-1013x1024.png 1013w, https://thinkmove.jp/wp-content/uploads/2024/11/strategy_01-297x300.png 297w, https://thinkmove.jp/wp-content/uploads/2024/11/strategy_01-768x777.png 768w, https://thinkmove.jp/wp-content/uploads/2024/11/strategy_01.png 1243w" sizes="(max-width: 1013px) 100vw, 1013px" width="1013" height="1024" />
+</figure>
+
+<div class="wp-block-media-text__content">
+
+私たちは、SEOやAI活用、コンテンツ戦略といった“点”の技術を、クライアントのビジネス全体を支える“面”へと拡張することで、飛躍的な成果を創出することを目指しています。
+
+そもそもマーケティングとは、人々の行動心理や社会の変化と常に向き合う営みです。こうした**人間ならではの洞察力や共感力**に、**AIの圧倒的な情報処理能力**を組み合わせることで、これまで気づかなかった課題の根底や、新しい施策の可能性を浮かび上がらせることができます。単に各領域を最適化して終わらせるのではなく、「**これとこれをつないでみたら、まったく新しい突破口が見つかった**」という瞬間を生み出すことこそが、私たちが考える“進化”の本質です。
+
+一見バラバラに見えるSEO、AI、コンテンツ戦略、あるいは組織構造といった要素も、正しい視座や文脈を与えれば、互いに補完し合い、想像以上の相乗効果を発揮します。そこで重要になるのが、人間ならではの発想の柔軟性と、AIがもたらすデータドリブンな精度の掛け合わせです。**新しい視座と手段を融合することで、「あ、こんな方法があったんだ！」と閃く瞬間が増え、実行に移すスピードも格段に上がる。**こうした循環が、ビジネス全体の成長エンジンを加速させると信じています。
+
+私たちは、そんな**“点と点をつなぎ、新たな面を描く”**パートナーでありたい。
+
+ステークホルダーとの対話を通じて、本質的なゴールを共有し、必要とあらば組織やプロセスの見直しにも踏み込みます。なぜなら、本当の最適解は、一つの技術や手法だけで完結するものではなく、**「人の思考とAI」という両輪**によって見つけ出されると確信しているからです。
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
