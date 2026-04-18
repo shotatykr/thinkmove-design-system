@@ -43,6 +43,11 @@ cp "$LP_DIR/assets/logos/collabit-logo.png" "$SELF_DIR/lp/logos/collabit-logo.pn
 cp "$LP_DIR/assets/logos/makuake_logo.png" "$SELF_DIR/lp/logos/makuake_logo.png"
 echo "  ✓ lp/logos/{collabit,makuake}-logo.png"
 
+# Profile photo (LP本体から直接取得。WordPress Media URLs)
+PROFILE_URL="https://thinkmove.jp/wp-content/uploads/2024/11/IMG_3759.jpg"
+curl -fsSL "$PROFILE_URL" -o "$SELF_DIR/lp/profile/toyokura-shota.jpg"
+echo "  ✓ lp/profile/toyokura-shota.jpg (from live LP)"
+
 echo ""
 echo "✅ Sync complete. Review with: git diff"
 echo "   Commit & push: git add -A && git commit -m 'sync from monorepo' && git push"

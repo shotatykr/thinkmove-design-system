@@ -206,9 +206,11 @@ thinkmove-design-system/
 │   │   ├── 02_about.md
 │   │   ├── 03_consultation.md
 │   │   └── 09_philosophy.md
-│   └── logos/                   # クライアントロゴ
-│       ├── collabit-logo.png
-│       └── makuake_logo.png
+│   ├── logos/                   # クライアントロゴ
+│   │   ├── collabit-logo.png
+│   │   └── makuake_logo.png
+│   └── profile/                 # 代表者プロフィール写真
+│       └── toyokura-shota.jpg   # thinkmove.jp/company/profile/ 掲載の公式写真
 └── sync.sh                      # 本体モノレポから再同期
 ```
 
