@@ -1,40 +1,47 @@
 #!/usr/bin/env bash
 # thinkmove-design-system/sync.sh
-# 本体モノレポ（projects/thinkmove-tools/）から最新のデザインシステム資産を取り込む
+# 本体モノレポ（projects/thinkmove.jp/）から最新のLP素材を取り込む
 
 set -euo pipefail
 
 MONOREPO="${THINKMOVE_MONOREPO:-$HOME/projects/thinkmove}"
-TOOLS_DIR="$MONOREPO/projects/thinkmove-tools"
+LP_DIR="$MONOREPO/projects/thinkmove.jp"
 SELF_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-if [ ! -d "$TOOLS_DIR" ]; then
-  echo "❌ thinkmove-tools not found at: $TOOLS_DIR"
+if [ ! -d "$LP_DIR" ]; then
+  echo "❌ thinkmove.jp not found at: $LP_DIR"
   echo "   Set THINKMOVE_MONOREPO env var to override."
   exit 1
 fi
 
-echo "🔄 Syncing from $TOOLS_DIR ..."
+echo "🔄 Syncing from $LP_DIR ..."
 
-# Tokens
-cp "$TOOLS_DIR/app/globals.css" "$SELF_DIR/tokens/globals.css"
-echo "  ✓ tokens/globals.css"
+# Company logos (本体モノレポの tools 側と LP 側で共通)
+cp "$MONOREPO/projects/thinkmove-tools/public/logo-dark.png" "$SELF_DIR/assets/logo-dark.png"
+cp "$MONOREPO/projects/thinkmove-tools/public/logo-white.png" "$SELF_DIR/assets/logo-white.png"
+echo "  ✓ assets/logo-{dark,white}.png"
 
-# Components
-for comp in SiteHeader SiteFooter ScoreGauge; do
-  cp "$TOOLS_DIR/components/$comp.tsx" "$SELF_DIR/components/$comp.tsx"
-  echo "  ✓ components/$comp.tsx"
+# LP screenshots (主要5点)
+for shot in design-home-fullpage live-lp-hero live-lp-empathy lp-comparison-table lp-case-makuake-howma; do
+  cp "$LP_DIR/screenshots/$shot.png" "$SELF_DIR/lp/screenshots/$shot.png"
+  echo "  ✓ lp/screenshots/$shot.png"
 done
 
-# Examples
-cp "$TOOLS_DIR/app/page.tsx" "$SELF_DIR/examples/home-page.tsx"
-cp "$TOOLS_DIR/app/ctr-simulator/page.tsx" "$SELF_DIR/examples/tool-page.tsx"
-echo "  ✓ examples/{home,tool}-page.tsx"
+# LP CSS
+cp "$LP_DIR/website-html/css/style.css" "$SELF_DIR/lp/css/style.css"
+cp "$LP_DIR/website-html/lp-implementation/lp-cocreation.css" "$SELF_DIR/lp/css/lp-cocreation.css"
+echo "  ✓ lp/css/{style,lp-cocreation}.css"
 
-# Assets
-cp "$TOOLS_DIR/public/logo-dark.png" "$SELF_DIR/assets/logo-dark.png"
-cp "$TOOLS_DIR/public/logo-white.png" "$SELF_DIR/assets/logo-white.png"
-echo "  ✓ assets/logo-{dark,white}.png"
+# LP content (core copy)
+for md in 01_top 02_about 03_consultation 09_philosophy; do
+  cp "$LP_DIR/website-content/$md.md" "$SELF_DIR/lp/content/$md.md"
+  echo "  ✓ lp/content/$md.md"
+done
+
+# Client logos
+cp "$LP_DIR/assets/logos/collabit-logo.png" "$SELF_DIR/lp/logos/collabit-logo.png"
+cp "$LP_DIR/assets/logos/makuake_logo.png" "$SELF_DIR/lp/logos/makuake_logo.png"
+echo "  ✓ lp/logos/{collabit,makuake}-logo.png"
 
 echo ""
 echo "✅ Sync complete. Review with: git diff"

@@ -183,30 +183,43 @@
 
 ## リポジトリ構成
 
+観察元である **thinkmove.jp LP** の素材を主に収録。
+
 ```
 thinkmove-design-system/
-├── README.md                 # 世界観・思想の核（このファイル）
-├── tokens/
-│   └── globals.css           # 色・余白・radius・shadow（進化する）
-├── components/
-│   ├── SiteHeader.tsx
-│   ├── SiteFooter.tsx
-│   └── ScoreGauge.tsx
-├── examples/
-│   ├── home-page.tsx         # トップページ構成
-│   └── tool-page.tsx         # ツールページ典型
+├── README.md                    # 世界観・思想の核（このファイル）
 ├── assets/
-│   ├── logo-dark.png
+│   ├── logo-dark.png            # 会社ロゴ
 │   └── logo-white.png
-└── sync.sh                   # 本体モノレポから再同期
+├── lp/                          # thinkmove.jp LP の実素材
+│   ├── screenshots/             # LPの実画面（主要5点）
+│   │   ├── design-home-fullpage.png
+│   │   ├── live-lp-hero.png
+│   │   ├── live-lp-empathy.png
+│   │   ├── lp-comparison-table.png
+│   │   └── lp-case-makuake-howma.png
+│   ├── css/                     # LPのCSS
+│   │   ├── style.css
+│   │   └── lp-cocreation.css
+│   ├── content/                 # LPのコピー原本（Markdown）
+│   │   ├── 01_top.md
+│   │   ├── 02_about.md
+│   │   ├── 03_consultation.md
+│   │   └── 09_philosophy.md
+│   └── logos/                   # クライアントロゴ
+│       ├── collabit-logo.png
+│       └── makuake_logo.png
+└── sync.sh                      # 本体モノレポから再同期
 ```
 
 ---
 
 ## 同期
 
-このリポは **参照用のスナップショット**。真のソースは内部モノレポの `projects/thinkmove-tools/`。
-デザイン変更時は内部で編集 → `./sync.sh` → push で追従。
+このリポは **参照用のスナップショット**。真のソースは内部モノレポの `projects/thinkmove.jp/`（LP素材の倉庫）。
+LP側の素材を変更したら内部で編集 → `./sync.sh` → push で追従。
+
+LP本体は WordPress + エックスサーバーで配信。CSSや画像は `projects/thinkmove.jp/` にスナップショットされている。
 
 ---
 
