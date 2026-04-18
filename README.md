@@ -202,30 +202,8 @@ thinkmove-design-system/
 │   │   └── lp-case-makuake-howma.png
 │   ├── manga/                   # 4コマ漫画（「重たい話を重たく伝えない」の象徴）
 │   │   └── 4koma_{comic_A,pattern_B-E}.webp
-│   ├── css/                     # LPのCSS
-│   │   ├── style.css
-│   │   └── lp-cocreation.css
-│   ├── content/                 # LPのコピー原本（20ページ、Markdown）
-│   │   ├── 01_top.md            # トップページ
-│   │   ├── 02_about.md          # 会社概要
-│   │   ├── 03_consultation.md   # 無料相談
-│   │   ├── 04_works.md          # 実績
-│   │   ├── 05_works_makuake.md  # マクアケ事例
-│   │   ├── 06_works_collabbit.md # コラビット事例
-│   │   ├── 07_faq.md            # FAQ
-│   │   ├── 08_flow.md           # 支援の流れ
-│   │   ├── 09_philosophy.md     # フィロソフィー
-│   │   ├── 10_contact.md        # 問い合わせ
-│   │   ├── 11_media.md          # メディア
-│   │   ├── 12_inhouse-seo.md    # インハウスSEO支援
-│   │   ├── 13_why-seo-fails.md  # SEO会社に失望した方へ
-│   │   ├── 14_small-team-seo.md # 少人数チーム向けSEO
-│   │   ├── 15_marketing-advisor.md # マーケティングアドバイザー
-│   │   ├── 16_seo-ai.md         # SEO × AI
-│   │   ├── 17_btob-seo.md       # BtoB向けSEO
-│   │   ├── 18_post-crowdfunding.md # ポストクラウドファンディング
-│   │   ├── 19_service_cocreation_standard.md # 共創スタンダード
-│   │   └── 20_service_cocreation_light.md # 共創ライト
+│   ├── css/
+│   │   └── style.css            # SWELL子テーマCSS（live、1429行）
 │   ├── logos/                   # 支援先クライアントロゴ
 │   │   ├── collabit-logo.png
 │   │   ├── freeweb-logo.png
@@ -239,8 +217,18 @@ thinkmove-design-system/
 
 ## 注記
 
-- **Orange アクセントの旧ロゴは削除**しました。ThinkMove の accent は **navy（#1e3a5f 系）** が正式で、orange は v3 世界観で「限定ハイライトのみ、広面では使わない」と定義されています。
-- `assets/logo.png` が唯一の canonical ロゴ。白地・黒地いずれの背景にも透明PNGで対応可能。
+### Orange アクセントについて
+
+- `assets/logo-white.png`（orange accent付き）は **削除済み**
+- `assets/logo.png` が唯一の canonical ロゴ（navy accent、透明PNG、2700×571）
+
+### CSS のブランド齟齬
+
+`lp/css/style.css` は **thinkmove.jp の live SWELL子テーマ** から取得した実装。ただし `--tm-accent: #ED8936`（orange）が残存しており、v3世界観「orange は限定ハイライト、広面では使わない」と齟齬がある。**これは LP 側の技術的負債**であり、今後のブランドレビューで解消すべき項目。
+
+### Content について
+
+本リポジトリには **LP本体のコピー原本（Markdown）は含まれていません**。理由：モノレポ内の `projects/thinkmove.jp/website-content/*.md` は多くがドラフト（未公開）で、live URL と対応しないものが多数あったため削除。Pencil等の AI デザインツールは、必要に応じて [thinkmove.jp](https://thinkmove.jp/) を直接クロールすること。
 
 ---
 

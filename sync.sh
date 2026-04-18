@@ -31,16 +31,9 @@ for shot in design-home-fullpage live-lp-hero live-lp-empathy lp-comparison-tabl
 done
 echo "  ✓ lp/screenshots/*.png (5 files)"
 
-# LP CSS (モノレポから)
-cp "$LP_DIR/website-html/css/style.css" "$SELF_DIR/lp/css/style.css"
-cp "$LP_DIR/website-html/lp-implementation/lp-cocreation.css" "$SELF_DIR/lp/css/lp-cocreation.css"
-echo "  ✓ lp/css/{style,lp-cocreation}.css"
-
-# LP content (モノレポから、20ページ)
-for md in $(ls "$LP_DIR/website-content/" | grep -E '^[0-9]+_.*\.md$' | sort); do
-  cp "$LP_DIR/website-content/$md" "$SELF_DIR/lp/content/$md"
-done
-echo "  ✓ lp/content/*.md (20 files)"
+# LP CSS (live本体から = SWELL子テーマ)
+curl -fsSL "$BASE/wp-content/themes/swell_child/style.css" -o "$SELF_DIR/lp/css/style.css"
+echo "  ✓ lp/css/style.css (live swell_child/style.css)"
 
 # Client logos (モノレポ + LPテーマ)
 cp "$LP_DIR/assets/logos/collabit-logo.png" "$SELF_DIR/lp/logos/collabit-logo.png"

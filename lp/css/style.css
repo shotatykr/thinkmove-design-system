@@ -1,878 +1,1429 @@
-/* ========================================
-   ThinkMove Website Styles
-   Brand Worldview: 20260307_brand-worldview-design.md
-   ======================================== */
+@charset "UTF-8";
+/*
+    Template: swell
+    Theme Name: SWELL CHILD
+    Theme URI: https://swell-theme.com/
+    Description: SWELLの子テーマ
+    Version: 1.0.0
+    Author: LOOS WEB STUDIO
+    Author URI: https://loos-web-studio.com/
 
-/* Reset & Base */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    License: GNU General Public License
+    License URI: http://www.gnu.org/licenses/gpl.html
+*/
+
+/* ==========================================================================
+   ThinkMove Design Tokens
+   ========================================================================== */
 
 :root {
-  /* Colors - Brand Worldview */
-  --color-primary: #1A2B4E;
-  --color-primary-dark: #111E38;
-  --color-accent: #0D9488;
-  --color-accent-dark: #0B7F74;
-  --color-text: #111827;
-  --color-text-light: #6B7280;
-  --color-bg: #FFFFFF;
-  --color-surface: #F9FAFB;
-  --color-border: #E5E7EB;
+  /* Primary Colors */
+  --tm-primary: #1A365D;
+  --tm-secondary: #319795;
+  --tm-accent: #ED8936;
+
+  /* Background Colors */
+  --tm-bg: #FFFFFF;
+  --tm-bg-light: #F7FAFC;
+  --tm-bg-dark: #0D1A26;
+
+  /* Text Colors */
+  --tm-text: #2D3748;
+  --tm-text-light: #718096;
+  --tm-border: #E2E8F0;
 
   /* Typography */
-  --font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-
-  /* Spacing */
-  --space-section: 120px;
-  --space-block: 64px;
-  --space-element: 32px;
-  --space-tight: 16px;
-  --max-width: 1200px;
-  --content-width: 800px;
+  --tm-font-base: 'Noto Sans JP', sans-serif;
+  --tm-font-display: 'Inter', sans-serif;
 
   /* Effects */
-  --radius-sm: 8px;
-  --radius-full: 100px;
-  --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --tm-radius: 8px;
+  --tm-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  --tm-shadow-lg: 0 4px 20px rgba(0,0,0,0.12);
 }
 
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
-}
+/* ==========================================================================
+   ThinkMove Typography
+   ========================================================================== */
 
-body {
-  font-family: var(--font-family);
-  color: var(--color-text);
-  line-height: 1.8;
-  background-color: var(--color-bg);
-  -webkit-font-smoothing: antialiased;
-}
-
-a {
-  color: var(--color-accent);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-a:hover {
-  color: var(--color-accent-dark);
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  line-height: 1.4;
-  color: var(--color-primary);
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-}
-
-h2 {
-  font-size: 1.875rem;
-  margin-bottom: 1.25rem;
-}
-
-h3 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-h4 {
-  font-size: 1.125rem;
-  margin-bottom: 0.75rem;
-}
-
-p {
-  margin-bottom: 1rem;
-}
-
-ul, ol {
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
-}
-
-li {
-  margin-bottom: 0.5rem;
-}
-
-/* ===== Header ===== */
-.site-header {
-  background: var(--color-primary);
-  color: #fff;
-  padding: 1rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.header-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.site-logo {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 0.02em;
-}
-
-.site-logo:hover {
-  color: #fff;
-  opacity: 0.9;
-}
-
-.site-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
-
-.site-nav a {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.site-nav a:hover {
-  color: #fff;
-}
-
-.nav-cta {
-  background: var(--color-accent);
-  padding: 0.5rem 1.25rem;
-  border-radius: var(--radius-sm);
-  color: #fff;
-}
-
-.nav-cta:hover {
-  background: var(--color-accent-dark);
-  color: #fff;
-}
-
-/* ===== Hero Section ===== */
-.hero {
-  background: var(--color-bg);
-  color: var(--color-text);
-  padding: 100px 1.5rem 80px;
+.tm-section-title {
   text-align: center;
+  margin-bottom: 50px;
 }
 
-.hero h1 {
-  color: var(--color-primary);
-  font-size: 2.75rem;
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.02em;
-}
-
-.hero-lead {
-  font-size: 1.125rem;
-  color: var(--color-text-light);
-  max-width: 600px;
-  margin: 0 auto 2.5rem;
-  line-height: 2;
-}
-
-/* ===== Page Header ===== */
-.page-header {
-  background: var(--color-surface);
-  padding: 3rem 1.5rem;
-  text-align: center;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.page-header h1 {
-  margin-bottom: 1rem;
-}
-
-.page-header .lead {
-  font-size: 1.125rem;
-  color: var(--color-text-light);
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* ===== Main Content ===== */
-.main-content {
-  max-width: var(--content-width);
-  margin: 0 auto;
-  padding: 3rem 1.5rem;
-}
-
-.main-content.wide {
-  max-width: var(--max-width);
-}
-
-/* ===== Section ===== */
-.section {
-  padding: var(--space-section) 1.5rem;
-}
-
-.section-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-.section-label {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: 0.75rem;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: var(--space-block);
-}
-
-.section-title h2 {
-  margin-top: 0;
-}
-
-.section-subtitle {
-  font-size: 1rem;
-  color: var(--color-text-light);
-  max-width: 600px;
-  margin: 0.75rem auto 0;
-}
-
-.section-alt {
-  background: var(--color-surface);
-}
-
-/* ===== Cards ===== */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-element);
-}
-
-.card-grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-element);
-}
-
-.card {
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: 2rem;
-  transition: box-shadow 0.2s var(--ease-out);
-}
-
-.card:hover {
-  box-shadow: var(--shadow);
-}
-
-.card h3 {
-  margin-top: 0;
-  color: var(--color-primary);
-}
-
-.card .card-cost {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--color-border);
-  font-size: 0.875rem;
-  color: var(--color-text-light);
-}
-
-.card .card-cost strong {
-  color: var(--color-primary);
-}
-
-/* ===== Stats / Before-After ===== */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-element);
-}
-
-.stat-card {
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-left: 4px solid var(--color-accent);
-  border-radius: var(--radius-sm);
-  padding: 2rem;
-}
-
-.stat-card .stat-company {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: 0.75rem;
-}
-
-.stat-card .stat-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  display: block;
-  margin-bottom: 0.25rem;
-}
-
-.stat-card .stat-detail {
-  font-size: 0.9375rem;
-  color: var(--color-text-light);
-  margin-bottom: 0;
-}
-
-.stat-card .stat-context {
-  font-size: 0.8125rem;
-  color: var(--color-text-light);
-  margin-top: 0.75rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--color-border);
-}
-
-/* Legacy stat styles (for other pages) */
-.stat-item {
-  padding: 2rem;
-  text-align: center;
-}
-
-.stat-number {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  display: block;
-}
-
-.stat-label {
-  font-size: 1rem;
-  color: var(--color-text-light);
-}
-
-/* ===== Comparison Table ===== */
-.comparison-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9375rem;
-}
-
-.comparison-table th,
-.comparison-table td {
-  padding: 1rem 1.25rem;
-  text-align: left;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.comparison-table th {
-  background: var(--color-surface);
-  font-weight: 700;
-  font-size: 0.8125rem;
-  letter-spacing: 0.04em;
-  color: var(--color-text-light);
-  white-space: nowrap;
-}
-
-.comparison-table tr:last-child td {
+.tm-section-title h2 {
+  font-size: 2rem;
+  color: var(--tm-primary);
+  margin-bottom: 15px;
   border-bottom: none;
 }
 
-.comparison-table .row-highlight {
-  background: #F0FDFA;
+.tm-section-title p {
+  color: var(--tm-text-light);
+  font-size: 1.1rem;
 }
 
-.comparison-table .row-highlight td {
-  font-weight: 500;
-  color: var(--color-primary);
-}
+/* ==========================================================================
+   ThinkMove Buttons
+   ========================================================================== */
 
-.comparison-table .row-highlight td:first-child {
-  font-weight: 700;
-}
-
-.table-wrapper {
-  overflow-x: auto;
-  margin: 1.5rem 0;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-}
-
-/* ===== Credential Badges ===== */
-.credentials {
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: 2rem;
-}
-
-.credential-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: center;
-}
-
-.credential-badge {
+.tm-btn {
   display: inline-block;
-  font-size: 0.8125rem;
+  padding: 15px 30px;
+  border-radius: 4px;
+  text-decoration: none;
   font-weight: 500;
-  color: var(--color-primary);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 20px;
-  padding: 0.375rem 1rem;
-  white-space: nowrap;
-}
-
-/* ===== Buttons ===== */
-.btn {
-  display: inline-block;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  font-weight: 700;
-  text-align: center;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  transition: all 0.2s var(--ease-out);
+  transition: all 0.3s;
   border: none;
+  cursor: pointer;
 }
 
-.btn-primary {
-  background: var(--color-accent);
+.tm-btn-primary {
+  background: var(--tm-accent);
   color: #fff;
 }
 
-.btn-primary:hover {
-  background: var(--color-accent-dark);
+.tm-btn-primary:hover {
+  background: #DD6B20;
   color: #fff;
 }
 
-.btn-secondary {
-  background: var(--color-primary);
-  color: #fff;
-}
-
-.btn-secondary:hover {
-  background: var(--color-primary-dark);
-  color: #fff;
-}
-
-.btn-outline {
+.tm-btn-outline {
+  border: 2px solid var(--tm-primary);
+  color: var(--tm-primary);
   background: transparent;
-  border: 2px solid var(--color-primary);
-  color: var(--color-primary);
 }
 
-.btn-outline:hover {
-  background: var(--color-primary);
+.tm-btn-outline:hover {
+  background: var(--tm-primary);
   color: #fff;
 }
 
-.btn-outline-white {
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+.tm-btn-large {
+  padding: 18px 40px;
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   ThinkMove Hero Section
+   ========================================================================== */
+
+.tm-hero {
+  background: linear-gradient(135deg, var(--tm-primary) 0%, #2C5282 100%);
   color: #fff;
-}
-
-.btn-outline-white:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: #fff;
-  color: #fff;
-}
-
-.btn-large {
-  padding: 1.125rem 2.5rem;
-  font-size: 1.0625rem;
-  border-radius: var(--radius-full);
-}
-
-.btn-group {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* ===== CTA Section ===== */
-.cta-section {
-  background: var(--color-primary);
-  color: #fff;
-  padding: var(--space-section) 1.5rem;
+  padding: 80px 20px;
   text-align: center;
 }
 
-.cta-section h2 {
+.tm-hero h1 {
+  font-size: 2.2rem;
+  line-height: 1.4;
+  margin-bottom: 20px;
   color: #fff;
-  margin-top: 0;
+}
+
+.tm-hero .lead {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+/* ==========================================================================
+   ThinkMove Cards
+   ========================================================================== */
+
+.tm-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.tm-card {
+  background: #fff;
+  border-radius: var(--tm-radius);
+  padding: 30px;
+  box-shadow: var(--tm-shadow);
+  transition: box-shadow 0.3s;
+}
+
+.tm-card:hover {
+  box-shadow: var(--tm-shadow-lg);
+}
+
+.tm-card h3 {
+  color: var(--tm-primary);
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.tm-card p {
+  color: var(--tm-text-light);
+  margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   ThinkMove Service Cards
+   ========================================================================== */
+
+.tm-service-card {
+  background: #fff;
+  border-radius: var(--tm-radius);
+  padding: 30px;
+  box-shadow: var(--tm-shadow);
+  border-top: 4px solid var(--tm-border);
+}
+
+.tm-service-card.featured {
+  border-top-color: var(--tm-accent);
+}
+
+.tm-service-card .badge {
+  background: var(--tm-accent);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.tm-service-card h3 {
+  color: var(--tm-primary);
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.tm-service-card .price {
   font-size: 2rem;
+  font-weight: 700;
+  color: var(--tm-primary);
+  margin: 20px 0;
 }
 
-.cta-section p {
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 600px;
-  margin: 0 auto 2rem;
+.tm-service-card .price span {
   font-size: 1rem;
+  font-weight: 400;
 }
 
-/* ===== Profile Section ===== */
-.profile-section {
+.tm-service-card ul {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.tm-service-card ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--tm-border);
+  color: var(--tm-text-light);
+}
+
+.tm-service-card ul li:last-child {
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   ThinkMove Mission/Vision Box
+   ========================================================================== */
+
+.tm-mission-box {
+  background: var(--tm-primary);
+  color: #fff;
+  padding: 40px;
+  border-radius: var(--tm-radius);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.tm-mission-box h3 {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.tm-mission-box p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.tm-vision-box {
+  background: var(--tm-secondary);
+  color: #fff;
+  padding: 30px 40px;
+  border-radius: var(--tm-radius);
   text-align: center;
 }
 
-.profile-name {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 0.25rem;
-}
-
-.profile-title {
-  font-size: 0.9375rem;
-  color: var(--color-text-light);
-  margin-bottom: 1.5rem;
-}
-
-.profile-bio {
-  font-size: 1rem;
-  color: var(--color-text);
-  max-width: 600px;
-  margin: 0 auto 1.5rem;
-  line-height: 2;
-}
-
-/* ===== Highlight Box ===== */
-.highlight-box {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: 2rem;
-  margin: 2rem 0;
-}
-
-.highlight-box h4 {
-  margin-top: 0;
-}
-
-/* ===== Steps ===== */
-.steps {
-  counter-reset: step;
-}
-
-.step {
-  position: relative;
-  padding-left: 4rem;
-  margin-bottom: 2.5rem;
-}
-
-.step::before {
-  counter-increment: step;
-  content: counter(step);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 3rem;
-  height: 3rem;
-  background: var(--color-primary);
+.tm-vision-box h3 {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
   color: #fff;
+}
+
+.tm-vision-box p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   ThinkMove Value Items
+   ========================================================================== */
+
+.tm-value-item {
+  display: flex;
+  margin-bottom: 40px;
+  align-items: flex-start;
+}
+
+.tm-value-number {
+  background: var(--tm-primary);
+  color: #fff;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-right: 20px;
 }
 
-.step h3 {
-  margin-top: 0;
+.tm-value-content h3 {
+  color: var(--tm-primary);
+  margin-bottom: 5px;
 }
 
-/* ===== FAQ ===== */
-.faq-item {
+.tm-value-content .subtitle {
+  color: var(--tm-text-light);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.tm-value-content ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.tm-value-content li {
+  margin-bottom: 5px;
+  color: var(--tm-text-light);
+}
+
+/* ==========================================================================
+   ThinkMove Steps
+   ========================================================================== */
+
+.tm-steps {
+  counter-reset: step;
+}
+
+.tm-step {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.tm-step::before {
+  counter-increment: step;
+  content: counter(step);
+  background: var(--tm-secondary);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+.tm-step-content h4 {
+  color: var(--tm-primary);
+  margin-bottom: 5px;
+}
+
+.tm-step-content p {
+  color: var(--tm-text-light);
+}
+
+/* ==========================================================================
+   ThinkMove Case Study
+   ========================================================================== */
+
+.tm-case-study {
+  background: #fff;
+  border-radius: var(--tm-radius);
+  overflow: hidden;
+  box-shadow: var(--tm-shadow);
+  margin-bottom: 30px;
+}
+
+.tm-case-header {
+  background: var(--tm-primary);
+  color: #fff;
+  padding: 30px;
+}
+
+.tm-case-header h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.tm-case-header p {
+  opacity: 0.9;
+}
+
+.tm-case-body {
+  padding: 30px;
+}
+
+.tm-case-quote {
+  background: var(--tm-bg-light);
+  border-left: 4px solid var(--tm-secondary);
+  padding: 20px;
+  margin: 20px 0;
+  font-style: italic;
+}
+
+.tm-case-phases {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.tm-phase-tag {
+  background: var(--tm-bg-light);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   ThinkMove Profile Section
+   ========================================================================== */
+
+.tm-profile-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.tm-profile-image {
+  background: var(--tm-bg-light);
+  border-radius: var(--tm-radius);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tm-text-light);
+  overflow: hidden;
+}
+
+.tm-profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tm-profile-content h3 {
+  font-size: 1.8rem;
+  color: var(--tm-primary);
+  margin-bottom: 5px;
+}
+
+.tm-profile-content .title {
+  color: var(--tm-text-light);
+  margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   ThinkMove Timeline
+   ========================================================================== */
+
+.tm-timeline {
+  border-left: 2px solid var(--tm-border);
+  padding-left: 20px;
+  margin: 30px 0;
+}
+
+.tm-timeline-item {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.tm-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -26px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  background: var(--tm-secondary);
+  border-radius: 50%;
+}
+
+.tm-timeline-year {
+  font-weight: 700;
+  color: var(--tm-primary);
+}
+
+.tm-timeline-desc {
+  color: var(--tm-text-light);
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   ThinkMove Book Section
+   ========================================================================== */
+
+.tm-book-section {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.tm-book-cover {
+  background: var(--tm-bg-light);
+  border-radius: var(--tm-radius);
+  aspect-ratio: 5/7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tm-text-light);
+  box-shadow: var(--tm-shadow-lg);
+  overflow: hidden;
+}
+
+.tm-book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tm-book-info h3 {
+  font-size: 1.3rem;
+  color: var(--tm-primary);
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.tm-book-meta {
+  color: var(--tm-text-light);
+  margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   ThinkMove Company Info
+   ========================================================================== */
+
+.tm-company-info {
+  background: var(--tm-bg-light);
+  border-radius: var(--tm-radius);
+  padding: 40px;
+}
+
+.tm-company-info h3 {
+  color: var(--tm-primary);
+  margin-bottom: 20px;
+}
+
+.tm-info-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 15px;
+}
+
+.tm-info-label {
+  color: var(--tm-text-light);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   ThinkMove CTA Section
+   ========================================================================== */
+
+.tm-cta-section {
+  background: linear-gradient(135deg, var(--tm-primary) 0%, #2C5282 100%);
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.tm-cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.tm-cta-section p {
+  opacity: 0.9;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================================================
+   ThinkMove FAQ
+   ========================================================================== */
+
+.tm-faq-item {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--tm-border);
 }
 
-.faq-question {
+.tm-faq-question {
   font-size: 1.125rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--tm-primary);
   margin-bottom: 0.75rem;
 }
 
-.faq-question::before {
+.tm-faq-question::before {
   content: "Q. ";
-  color: var(--color-accent);
+  color: var(--tm-accent);
 }
 
-.faq-answer {
+.tm-faq-answer {
   padding-left: 1.5rem;
+  color: var(--tm-text);
 }
 
-/* ===== Testimonial ===== */
-.testimonial {
-  background: var(--color-surface);
+/* ==========================================================================
+   ThinkMove Testimonial
+   ========================================================================== */
+
+.tm-testimonial {
+  background: var(--tm-bg-light);
   padding: 2rem;
-  border-radius: var(--radius-sm);
-  border-left: 4px solid var(--color-accent);
+  border-radius: var(--tm-radius);
+  border-left: 4px solid var(--tm-secondary);
   margin: 2rem 0;
 }
 
-.testimonial-text {
-  font-size: 1.0625rem;
+.tm-testimonial-text {
+  font-size: 1.125rem;
   font-style: italic;
   margin-bottom: 1rem;
-  line-height: 2;
 }
 
-.testimonial-author {
+.tm-testimonial-author {
   font-weight: 700;
-  color: var(--color-text-light);
-  font-size: 0.875rem;
+  color: var(--tm-text-light);
 }
 
-/* ===== Point List ===== */
-.point-list {
+/* ==========================================================================
+   ThinkMove Stats
+   ========================================================================== */
+
+.tm-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.tm-stat-item {
+  padding: 2rem;
+}
+
+.tm-stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--tm-accent);
+  display: block;
+}
+
+.tm-stat-label {
+  font-size: 1rem;
+  color: var(--tm-text-light);
+}
+
+/* ==========================================================================
+   ThinkMove Tables
+   ========================================================================== */
+
+.tm-table-wrapper {
+  overflow-x: auto;
+}
+
+.tm-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.tm-table th,
+.tm-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--tm-border);
+}
+
+.tm-table th {
+  background: var(--tm-bg-light);
+  color: var(--tm-primary);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   ThinkMove Section Backgrounds
+   ========================================================================== */
+
+.tm-section {
+  padding: 80px 0;
+}
+
+.tm-section-alt {
+  background: var(--tm-bg-light);
+}
+
+.tm-section-dark {
+  background: var(--tm-bg-dark);
+  color: #fff;
+}
+
+/* ==========================================================================
+   ThinkMove Highlight Box
+   ========================================================================== */
+
+.tm-highlight-box {
+  background: var(--tm-bg-light);
+  border: 1px solid var(--tm-border);
+  border-radius: var(--tm-radius);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.tm-highlight-box h4 {
+  margin-top: 0;
+  color: var(--tm-primary);
+}
+
+/* ==========================================================================
+   ThinkMove Point List
+   ========================================================================== */
+
+.tm-point-list {
   list-style: none;
   padding: 0;
 }
 
-.point-list li {
+.tm-point-list li {
   padding-left: 2rem;
   position: relative;
   margin-bottom: 1rem;
 }
 
-.point-list li::before {
-  content: "\2713";
+.tm-point-list li::before {
+  content: "✓";
   position: absolute;
   left: 0;
-  color: var(--color-accent);
+  color: var(--tm-accent);
   font-weight: 700;
 }
 
-/* ===== Price Table ===== */
-.price-card {
-  background: #fff;
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: 2rem;
-  text-align: center;
+/* ==========================================================================
+   ThinkMove Header Academy CTA
+   ========================================================================== */
+
+.w-header__inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.price-card.featured {
-  border-color: var(--color-accent);
-}
-
-.price-name {
-  font-size: 1.5rem;
+.tm-academy-cta {
+  display: inline-flex;
+  align-items: center;
+  background: #3182CE;
+  color: #fff !important;
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-size: 0.9rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.price-amount {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--color-primary);
-}
-
-.price-unit {
-  font-size: 1rem;
-  color: var(--color-text-light);
-}
-
-/* Table (general) */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.95rem;
-}
-
-th, td {
-  padding: 1rem;
-  text-align: left;
-  border-bottom: 1px solid var(--color-border);
-}
-
-th {
-  background: var(--color-surface);
-  font-weight: 700;
+  text-decoration: none !important;
+  transition: background 0.3s;
   white-space: nowrap;
 }
 
-/* ===== Footer ===== */
-.site-footer {
-  background: var(--color-primary);
-  color: #fff;
-  padding: 3rem 1.5rem 1.5rem;
+.tm-academy-cta:hover {
+  background: #2B6CB0;
+  color: #fff !important;
 }
 
-.footer-inner {
-  max-width: var(--max-width);
+/* ==========================================================================
+   ThinkMove SP Fixed Footer Bar
+   ========================================================================== */
+
+.tm-sp-fixed-bar {
+  display: none;
+}
+
+@media (max-width: 959px) {
+  .tm-sp-fixed-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    gap: 0;
+    background: #fff;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    padding: 8px;
+  }
+
+  .tm-sp-fixed-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 12px 8px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none !important;
+    white-space: nowrap;
+    margin: 0 4px;
+  }
+
+  .tm-sp-fixed-btn.-academy {
+    background: #3182CE;
+    color: #fff !important;
+  }
+
+  .tm-sp-fixed-btn.-contact {
+    background: #38A169;
+    color: #fff !important;
+  }
+
+  /* SWELLの固定フッターメニューと被らないよう余白 */
+  body {
+    padding-bottom: 64px;
+  }
+
+  /* SWELLの「トップへ戻る」ボタンを固定バーの上に配置 */
+  .p-fixBtnWrap {
+    bottom: 72px !important;
+  }
+}
+
+/* ==========================================================================
+   ThinkMove Responsive
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .tm-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .tm-section {
+    padding: 50px 0;
+  }
+
+  .tm-section-title h2 {
+    font-size: 1.6rem;
+  }
+
+  .tm-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tm-profile-section {
+    grid-template-columns: 1fr;
+  }
+
+  .tm-book-section {
+    grid-template-columns: 1fr;
+  }
+
+  .tm-info-grid {
+    grid-template-columns: 100px 1fr;
+  }
+
+  .tm-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tm-stat-number {
+    font-size: 2rem;
+  }
+
+  .tm-value-item {
+    flex-direction: column;
+  }
+
+  .tm-value-number {
+    margin-bottom: 15px;
+  }
+}
+
+/* ==========================================================================
+   ThinkMove Container (Fallback for SWELL)
+   ========================================================================== */
+
+/* SWELL の l-container がない場合のフォールバック */
+.tm-hero .l-container,
+.tm-section .l-container,
+.tm-cta-section .l-container {
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
+/* ==========================================================================
+   ThinkMove Page Template Overrides
+   ========================================================================== */
+
+/* サービスページ専用：SWELLのデフォルトレイアウト調整 */
+.page-template-page-service #content,
+.page-template-page-service .l-mainContent,
+.page-template-page-service .l-mainContent__inner {
+  padding: 0;
+  margin: 0;
+  max-width: none;
 }
 
-.footer-section h4 {
-  color: #fff;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 0.875rem;
-  letter-spacing: 0.04em;
-}
-
-.footer-section ul {
-  list-style: none;
+.page-template-page-service .post_content {
+  max-width: none;
   padding: 0;
 }
 
-.footer-section li {
-  margin-bottom: 0.5rem;
+/* SWELLのコンテンツ幅制限を解除 */
+.page-template-page-service .l-article {
+  max-width: none;
 }
 
-.footer-section a {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.875rem;
-  transition: color 0.2s;
+.page-template-page-service article.post {
+  padding: 0;
 }
 
-.footer-section a:hover {
+/* ヒーローセクション：ヘッダー直下にフィット */
+.page-template-page-service .tm-hero {
+  margin-top: 0;
+}
+
+/* CTAセクション：フッター直前にフィット */
+.page-template-page-service .tm-cta-section {
+  margin-bottom: 0;
+}
+
+/* サービスページのセクション間マージン */
+.page-template-page-service .tm-section + .tm-section {
+  margin-top: 0;
+}
+
+/* サービスページのカード内リスト */
+.page-template-page-service .tm-service-card ul {
+  margin: 20px 0;
+}
+
+.page-template-page-service .tm-value-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.page-template-page-service .tm-value-content li {
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.page-template-page-service .tm-value-content li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--tm-secondary);
+}
+
+/* SWELLサイドバー非表示（念のため） */
+.page-template-page-service #sidebar {
+  display: none;
+}
+
+/* SWELLの記事タイトル非表示（カスタムヒーローを使うため） */
+.page-template-page-service .c-pageTitle,
+.page-template-page-service .l-article__title {
+  display: none;
+}
+
+/* ==========================================================================
+   TOPページ専用スタイル
+   ========================================================================== */
+
+/* 課題カード（問題提起セクション用） */
+.tm-problem-card {
+  background: #fff;
+  border-radius: var(--tm-radius);
+  padding: 32px;
+  box-shadow: var(--tm-shadow);
+  border-left: 4px solid var(--tm-accent);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.tm-problem-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--tm-shadow-lg);
+}
+.tm-problem-card h3 {
+  color: var(--tm-primary);
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+.tm-problem-card p {
+  color: var(--tm-text-light);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* アプローチカード */
+.tm-approach-card {
+  background: #fff;
+  border-radius: var(--tm-radius);
+  padding: 40px 32px;
+  box-shadow: var(--tm-shadow);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.tm-approach-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--tm-shadow-lg);
+}
+.tm-approach-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: var(--tm-primary);
   color: #fff;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.tm-approach-card h3 {
+  color: var(--tm-primary);
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+.tm-approach-card p {
+  color: var(--tm-text-light);
+  line-height: 1.8;
+  margin: 0;
 }
 
-.footer-bottom {
-  text-align: center;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.6);
+/* クライアントロゴセクション（共通コンポーネント） */
+.tm-client-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding: 24px 0;
 }
-
-/* ===== Scroll Animation ===== */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s var(--ease-out),
-              transform 0.6s var(--ease-out);
+.tm-client-logos img {
+  height: 50px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  background: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: transform 0.3s;
 }
-
-.animate-on-scroll.is-visible {
+.tm-client-logos img:hover {
+  transform: scale(1.05);
+}
+.tm-client-logos-alt img {
+  background: transparent;
+  padding: 0;
+  opacity: 0.7;
+  filter: grayscale(100%);
+  transition: opacity 0.3s, filter 0.3s;
+}
+.tm-client-logos-alt img:hover {
   opacity: 1;
-  transform: translateY(0);
+  filter: grayscale(0%);
 }
 
-/* ===== Utilities ===== */
-.text-center {
+/* WORKSセクション：インラインロゴのサイズ・位置調整 */
+img[src*="clients/"][src*="-logo"],
+img[data-src*="clients/"][data-src*="-logo"] {
+  width: 140px !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+img[src*="clients/collabbit-logo"],
+img[data-src*="clients/collabbit-logo"] {
+  width: 110px !important;
+  position: relative;
+  top: 2px;
+}
+img[src*="clients/makuake-logo"],
+img[data-src*="clients/makuake-logo"] {
+  position: relative;
+  top: 2px;
+}
+
+/* 導入事例カード（ロゴ付き） */
+.tm-case-card {
+  background: #fff;
+  border-radius: var(--tm-radius);
+  overflow: hidden;
+  box-shadow: var(--tm-shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.tm-case-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--tm-shadow-lg);
+}
+.tm-case-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: var(--tm-bg-light);
+}
+.tm-case-content {
+  padding: 24px;
+}
+.tm-case-logo {
+  height: 32px;
+  width: auto;
+  max-width: 140px;
+  margin-bottom: 16px;
+  object-fit: contain;
+}
+.tm-case-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--tm-primary);
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.tm-case-card p {
+  font-size: 0.95rem;
+  color: var(--tm-text-light);
+  margin: 0;
+}
+.tm-case-result {
+  display: inline-block;
+  background: var(--tm-accent);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-top: 12px;
+}
+
+/* セクションラベル（TRUSTED BY等） */
+.tm-section-label {
   text-align: center;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: var(--tm-text-light);
+  margin-bottom: 24px;
+  text-transform: uppercase;
 }
 
-.mt-1 { margin-top: 0.5rem; }
-.mt-2 { margin-top: 1rem; }
-.mt-3 { margin-top: 1.5rem; }
-.mt-4 { margin-top: 2rem; }
-
-.mb-1 { margin-bottom: 0.5rem; }
-.mb-2 { margin-bottom: 1rem; }
-.mb-3 { margin-bottom: 1.5rem; }
-.mb-4 { margin-bottom: 2rem; }
-
-/* ===== Responsive ===== */
+/* プロフィールセクション（TOP用コンパクト版） */
+.tm-profile-compact {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.tm-profile-compact img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--tm-secondary);
+}
+.tm-profile-compact h3 {
+  font-size: 1.5rem;
+  color: var(--tm-primary);
+  margin-bottom: 8px;
+}
+.tm-profile-compact .title {
+  font-size: 0.95rem;
+  color: var(--tm-text-light);
+  margin-bottom: 16px;
+}
+.tm-profile-compact p {
+  color: var(--tm-text);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
 @media (max-width: 768px) {
-  :root {
-    --space-section: 80px;
-    --space-block: 40px;
-  }
-
-  html {
-    font-size: 15px;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  .hero {
-    padding: 60px 1.5rem 48px;
-  }
-
-  .hero h1 {
-    font-size: 1.875rem;
-  }
-
-  .hero-lead {
-    font-size: 1rem;
-  }
-
-  .site-nav {
-    display: none;
-  }
-
-  .header-inner {
-    justify-content: center;
-  }
-
-  .card-grid {
+  .tm-profile-compact {
     grid-template-columns: 1fr;
+    text-align: center;
   }
-
-  .card-grid-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .stat-number {
-    font-size: 2rem;
-  }
-
-  .comparison-table {
-    font-size: 0.875rem;
-  }
-
-  .comparison-table th,
-  .comparison-table td {
-    padding: 0.75rem;
-  }
-
-  .btn-group {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .credential-badge {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.75rem;
+  .tm-profile-compact img {
+    margin: 0 auto;
   }
 }
+
+/* サービスカードグリッド（TOP用） */
+.tm-service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+/* 数字強調（実績セクション用） */
+.tm-stat-highlight {
+  text-align: center;
+  padding: 32px;
+}
+.tm-stat-highlight .number {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--tm-accent);
+  line-height: 1;
+  display: block;
+}
+.tm-stat-highlight .label {
+  font-size: 1rem;
+  color: var(--tm-text-light);
+  margin-top: 8px;
+  display: block;
+}
+
+/* ==========================================================================
+   ThinkMove Academy CTA（目次上テキストリンク + 記事末バナー）
+   ========================================================================== */
+
+.tm-tools-inline {
+  margin: 0 0 12px;
+  padding: 10px 16px;
+  background: var(--tm-bg-light);
+  border-left: 3px solid var(--tm-secondary);
+  border-radius: 0 var(--tm-radius) var(--tm-radius) 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.tm-tools-inline a {
+  color: var(--tm-text);
+  text-decoration: none;
+}
+.tm-tools-inline a span {
+  color: var(--tm-secondary);
+  font-weight: 600;
+}
+.tm-tools-inline a:hover {
+  color: var(--tm-secondary);
+}
+
+.tm-tools-cta {
+  margin: 48px 0 24px;
+}
+.tm-tools-cta a {
+  display: block;
+  padding: 24px 28px;
+  background: linear-gradient(135deg, var(--tm-bg-dark) 0%, #1a2d4a 100%);
+  border-radius: var(--tm-radius);
+  text-decoration: none;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.tm-tools-cta a:hover {
+  box-shadow: var(--tm-shadow-lg);
+  transform: translateY(-2px);
+}
+.tm-tools-cta__badge {
+  display: inline-block;
+  font-family: var(--tm-font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--tm-accent);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.tm-tools-cta__text {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+.tm-tools-cta__sub {
+  display: block;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 768px) {
+  .tm-tools-cta a {
+    padding: 20px 20px;
+  }
+  .tm-tools-cta__text {
+    font-size: 1.05rem;
+  }
+}
+
+/* ==========================================================================
+   資料ダウンロードページ
+   ========================================================================== */
+
+.dl-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+.dl-page__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.dl-page__label {
+  display: inline-block;
+  font-family: var(--tm-font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tm-secondary);
+  margin-bottom: 8px;
+}
+h1.dl-page__heading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--tm-primary);
+  margin: 0 0 12px;
+  padding: 0;
+  border: none;
+}
+.dl-page__lead {
+  font-size: 0.95rem;
+  color: var(--tm-text-light);
+  margin: 0;
+}
+.dl-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.dl-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: var(--tm-radius);
+  overflow: hidden;
+  box-shadow: var(--tm-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.dl-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--tm-shadow-lg);
+}
+.dl-card__thumb {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--tm-bg-light);
+}
+.dl-card__thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+}
+.dl-card__body {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  flex: 1;
+}
+span.dl-card__tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--tm-secondary);
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+h2.dl-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--tm-primary);
+  line-height: 1.5;
+  margin: 0 0 8px;
+  padding: 0;
+  border: none;
+}
+.dl-card__desc {
+  font-size: 0.85rem;
+  color: var(--tm-text-light);
+  line-height: 1.7;
+  margin: 0 0 16px;
+  flex: 1;
+}
+a.dl-card__btn {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 10px 24px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--tm-secondary);
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+a.dl-card__btn:hover {
+  background: #0B7F74;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 960px) {
+  .dl-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .dl-page {
+    padding: 40px 16px 60px;
+  }
+  .dl-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  h1.dl-page__heading {
+    font-size: 1.4rem;
+  }
+}
+
+/* SWELLフルワイドブロック内でのスタイル調整 */
+.swell-block-fullWide .tm-client-logos,
+.swell-block-fullWide .tm-stats-grid,
+.swell-block-fullWide .tm-card-grid {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
