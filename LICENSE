@@ -1,0 +1,40 @@
+# License
+
+Copyright © 2026 ThinkMove Inc. / 豊藏翔太 (@shotatykr). All rights reserved.
+
+This repository publishes ThinkMove's brand worldview and design system as
+a reference for AI design tools and internal collaboration. It is **not**
+an open source project.
+
+---
+
+## Permitted use
+
+- **AI design tools** (Pencil, Figma AI, Claude, etc.) may ingest this
+  repository to understand ThinkMove's brand worldview, design language,
+  and copy tone when assisting work commissioned by ThinkMove.
+- Reading and forking the repository for private study is permitted.
+- Quoting short excerpts for commentary, review, or research is permitted
+  under fair use.
+
+## Not permitted (without written permission from ThinkMove Inc.)
+
+- **Brand assets** (logos, photographs, 4コマ漫画, illustrations) may not
+  be reproduced, redistributed, or used in any context outside of
+  ThinkMove's own properties.
+- The ThinkMove wordmark and identity may not be used in third-party
+  products, services, or promotional materials.
+- The worldview copy, taglines, and coined terms (共創型R&D / 問いの整流 /
+  判断の型 / 関与の深さ / 文脈の蓄積 / 同期セッション 等) may not be
+  reused in competing offerings.
+- Design system tokens and CSS may not be copied into third-party
+  products without attribution and a link back to thinkmove.jp.
+
+## Contact
+
+For licensing inquiries, brand use requests, or collaboration:
+豊藏翔太 — shota.toyokura@thinkmove.jp
+
+---
+
+*このライセンスは日本国内の著作権法および関連法令に準拠します。*
