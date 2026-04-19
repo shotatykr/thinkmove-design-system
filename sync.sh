@@ -25,12 +25,6 @@ UP="$BASE/wp-content/uploads"
 curl -fsSL "$UP/2024/11/thinkmovenotlogo_transparent.png" -o "$SELF_DIR/assets/logo.png"
 echo "  ✓ assets/logo.png"
 
-# LP screenshots (主要5点、モノレポから)
-for shot in design-home-fullpage live-lp-hero live-lp-empathy lp-comparison-table lp-case-makuake-howma; do
-  cp "$LP_DIR/screenshots/$shot.png" "$SELF_DIR/lp/screenshots/$shot.png"
-done
-echo "  ✓ lp/screenshots/*.png (5 files)"
-
 # LP CSS (live本体から = SWELL子テーマ)
 curl -fsSL "$BASE/wp-content/themes/swell_child/style.css" -o "$SELF_DIR/lp/css/style.css"
 echo "  ✓ lp/css/style.css (live swell_child/style.css)"
@@ -92,20 +86,19 @@ for f in freeweb-logo zigexn-logo; do
 done
 echo "  ✓ lp/logos/*.png (4 clients)"
 
-# Profile photos (LP本体から)
+# Profile photo (1 portrait only for media-text demo)
 curl -fsSL "$UP/2024/11/IMG_3759.jpg" -o "$SELF_DIR/lp/profile/toyokura-shota.jpg"
-curl -fsSL "$UP/2025/04/翔太プロフィール画像（オフィス背景）-1024x1024.png" -o "$SELF_DIR/lp/profile/toyokura-office.png"
-echo "  ✓ lp/profile/toyokura-{shota,office}.{jpg,png}"
+echo "  ✓ lp/profile/toyokura-shota.jpg"
 
 # Brand illustration (LP本体から)
 curl -fsSL "$UP/2024/11/4.png" -o "$SELF_DIR/lp/brand/desk-scene.png"
 echo "  ✓ lp/brand/desk-scene.png"
 
-# 4コマ漫画 (LPテーマから)
-for f in 4koma_comic_A 4koma_pattern_B 4koma_pattern_C 4koma_pattern_D 4koma_pattern_E; do
+# 4コマ漫画 (carousel demo 用3枚のみ、LPテーマから)
+for f in 4koma_comic_A 4koma_pattern_B 4koma_pattern_C; do
   curl -fsSL "$TH/manga/$f.webp" -o "$SELF_DIR/lp/manga/$f.webp"
 done
-echo "  ✓ lp/manga/4koma_*.webp (5 files)"
+echo "  ✓ lp/manga/4koma_*.webp (3 files)"
 
 echo ""
 echo "✅ Sync complete. Review with: git diff"

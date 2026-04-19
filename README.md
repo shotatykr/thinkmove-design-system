@@ -194,14 +194,10 @@ thinkmove-design-system/
 ├── lp/                          # thinkmove.jp LP の実素材
 │   ├── brand/
 │   │   └── desk-scene.png       # プロフィールページ装飾イラスト
-│   ├── screenshots/             # LPの実画面（主要5点）
-│   │   ├── design-home-fullpage.png
-│   │   ├── live-lp-hero.png
-│   │   ├── live-lp-empathy.png
-│   │   ├── lp-comparison-table.png
-│   │   └── lp-case-makuake-howma.png
-│   ├── manga/                   # 4コマ漫画（「重たい話を重たく伝えない」の象徴）
-│   │   └── 4koma_{comic_A,pattern_B-E}.webp
+│   ├── manga/                   # 4コマ漫画（carousel module の demo 用3枚）
+│   │   ├── 4koma_comic_A.webp
+│   │   ├── 4koma_pattern_B.webp
+│   │   └── 4koma_pattern_C.webp
 │   ├── css/
 │   │   └── style.css            # SWELL子テーマCSS（live、1429行）
 │   ├── content/                 # ライブLPから取得したページ（14本、Markdown変換）
@@ -224,11 +220,22 @@ thinkmove-design-system/
 │   │   ├── freeweb-logo.png
 │   │   ├── makuake_logo.png
 │   │   └── zigexn-logo.png
-│   └── profile/                 # 代表者プロフィール写真
-│       ├── toyokura-shota.jpg   # 森背景（thinkmove.jp/company/profile/）
-│       └── toyokura-office.png  # オフィス背景（スクエア、トップページ掲載）
+│   └── profile/
+│       └── toyokura-shota.jpg   # 代表ポートレート（media-text layout の demo 用）
 └── sync.sh                      # LP本体から再同期
 ```
+
+## 収録方針
+
+本リポは **system の documentation** であり LP の再現ではない。コンポーネント demo に必要な最小セットのみ保持：
+
+- **Logos** × 4：WORKS component demo 用
+- **Manga** × 3：carousel module の demo 用（LPでは5枚だが、demo には3枚で十分）
+- **Profile** × 1：media-text layout の demo 用
+- **Brand illustration** × 1
+- **Company logo** × 1
+
+LP の full-page screenshot や hero variant などは**収録しない**（既存LPを観察したい場合は [thinkmove.jp](https://thinkmove.jp/) を直接参照）。
 
 ## 注記
 
