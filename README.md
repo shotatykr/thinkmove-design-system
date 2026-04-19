@@ -215,14 +215,7 @@ thinkmove-design-system/
 │       ├── lp-co-creation.md
 │       ├── blog-judgment-as-a-service.md
 │       └── blog-2026-seo.md
-│   ├── logos/                   # 支援先クライアントロゴ
-│   │   ├── collabit-logo.png
-│   │   ├── freeweb-logo.png
-│   │   ├── makuake_logo.png
-│   │   └── zigexn-logo.png
-│   └── profile/
-│       └── toyokura-shota.jpg   # 代表ポートレート（media-text layout の demo 用）
-└── sync.sh                      # LP本体から再同期
+└── sync.sh                      # LP本体から再同期（要 pandoc）
 ```
 
 ## 収録方針
