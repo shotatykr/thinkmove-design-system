@@ -29,51 +29,59 @@ echo "  ✓ assets/logo.png"
 curl -fsSL "$BASE/wp-content/themes/swell_child/style.css" -o "$SELF_DIR/lp/css/style.css"
 echo "  ✓ lp/css/style.css (live swell_child/style.css)"
 
-# LP content (live本体から HTML→Markdown変換、14ページ)
-# 要 pandoc: brew install pandoc
+# LP content (live本体から、9ページ) — 要 pandoc: brew install pandoc
+# 核レベルのHTMLクリーン（div/span/figure unwrap、style/script除去、a簡素化）
 if command -v pandoc >/dev/null 2>&1; then
   declare -A CONTENT_PAGES=(
     [top]="/"
     [company]="/company/"
     [company-profile]="/company/profile/"
-    [contact]="/contact/"
-    [download]="/download/"
     [case-howma]="/case/howma/"
     [case-makuake]="/case/makuake/"
     [case-customer-voice]="/case/customer-voice/"
     [lp-co-creation]="/lp/co-creation/"
-    [lp-ai]="/lp/ai/"
-    [lp-partner]="/lp/partner/"
-    [lp-production]="/lp/production/"
     [blog-judgment-as-a-service]="/blog/judgment-as-a-service/"
     [blog-2026-seo]="/blog/2026-seo/"
   )
 
   for key in "${!CONTENT_PAGES[@]}"; do
     url="$BASE${CONTENT_PAGES[$key]}"
-    cleaned=$(curl -sL "$url" | python3 -c "
+    html=$(curl -sL "$url")
+    md=$(echo "$html" | pandoc -f html -t gfm --wrap=none 2>/dev/null | python3 -c "
 import sys, re
-html = sys.stdin.read()
-m = re.search(r'<main[^>]*>(.*?)</main>', html, re.DOTALL)
-content = m.group(1) if m else html
-content = re.sub(r'<div[^>]*class=\"[^\"]*(?:wp-block-group|wp-block-columns|swell-block|swl-|c-[a-z]+|u-[a-z]+|l-[a-z]+|is-style|is-layout)[^\"]*\"[^>]*>', '', content)
-content = re.sub(r'</div>', '', content)
-content = re.sub(r'<span[^>]*class=\"[^\"]*(?:swl-|swell-)[^\"]*\"[^>]*>', '', content)
-content = re.sub(r'</span>', '', content)
-content = re.sub(r'<img[^>]*src=\"data:image/gif;base64[^\"]*\"[^>]*>', '', content)
-content = re.sub(r'<figure[^>]*class=\"[^\"]*wp-block-embed[^\"]*\"[^>]*>.*?</figure>', '', content, flags=re.DOTALL)
-content = re.sub(r'<nav[^>]*>.*?</nav>', '', content, flags=re.DOTALL)
-content = re.sub(r'<figure[^>]*>\s*</figure>', '', content)
-content = re.sub(r'\n\s*\n\s*\n+', '\n\n', content)
-sys.stdout.write(content)
+c = sys.stdin.read()
+# <style>/<script> block removal
+c = re.sub(r'<style\b[^>]*>.*?</style>', '', c, flags=re.DOTALL|re.I)
+c = re.sub(r'<script\b[^>]*>.*?</script>', '', c, flags=re.DOTALL|re.I)
+# Structural tags unwrap
+structural = r'(?:div|span|figure|figcaption|section|article|header|footer|nav|main|aside|colgroup|col)'
+c = re.sub(rf'</?{structural}\b[^>]*>', '', c)
+# <a> simplify to href-only
+def sa(m):
+  h = re.search(r'href=\"([^\"]*)\"', m.group(0))
+  return f'<a href=\"{h.group(1)}\">' if h else ''
+c = re.sub(r'<a\s+[^>]*>', sa, c)
+# Table/list attrs strip
+for tag in ['table','thead','tbody','tfoot','tr','th','td','p','ul','ol','li','blockquote']:
+  c = re.sub(rf'<{tag}\s+[^>]*>', f'<{tag}>', c)
+# img/svg/iframe removal
+c = re.sub(r'<(?:img|svg|iframe|embed|source|picture)\b[^>]*/?>', '', c)
+c = re.sub(r'<svg\b[^>]*>.*?</svg>', '', c, flags=re.DOTALL)
+# Markdown image syntax removal
+c = re.sub(r'!\[[^\]]*\]\([^)]*\)', '', c)
+# Line break & blank line normalize
+c = re.sub(r'\\\n', '\n', c)
+c = re.sub(r'\n\s*\n\s*(\n\s*)+', '\n\n', c)
+c = re.sub(r'<a\s+href=\"[^\"]*\">\s*</a>', '', c)
+c = '\n'.join(l.rstrip() for l in c.split('\n'))
+sys.stdout.write(c.strip())
 ")
-    md=$(echo "$cleaned" | pandoc -f html -t gfm --wrap=none 2>/dev/null)
     {
       printf "> **URL**: %s\n> **Fetched**: %s\n\n---\n\n" "$url" "$(date +%Y-%m-%d)"
       echo "$md"
     } > "$SELF_DIR/lp/content/${key}.md"
   done
-  echo "  ✓ lp/content/*.md (14 files from live LP)"
+  echo "  ✓ lp/content/*.md (9 files, cleaned)"
 else
   echo "  ⚠ pandoc not found — skipping content sync. Install: brew install pandoc"
 fi

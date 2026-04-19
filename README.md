@@ -189,32 +189,32 @@
 thinkmove-design-system/
 ├── README.md                    # 世界観・思想の核（このファイル）
 ├── LICENSE                      # ライセンス（All rights reserved + AI参照許可）
-├── assets/
-│   └── logo.png                 # 公式ロゴ（navy accent、canonical、2700×571）
-├── lp/                          # thinkmove.jp LP の実素材
-│   ├── brand/
-│   │   └── desk-scene.png       # プロフィールページ装飾イラスト
-│   ├── manga/                   # 4コマ漫画（carousel module の demo 用3枚）
+├── assets/                      # 画像すべてここに集約
+│   ├── logo.png                 # 公式ロゴ（navy accent、canonical、2700×571）
+│   ├── logos/                   # 支援先クライアントロゴ
+│   │   ├── collabit-logo.png
+│   │   ├── freeweb-logo.png
+│   │   ├── makuake_logo.png
+│   │   └── zigexn-logo.png
+│   ├── manga/                   # 4コマ漫画（carousel module demo 用3枚）
 │   │   ├── 4koma_comic_A.webp
 │   │   ├── 4koma_pattern_B.webp
 │   │   └── 4koma_pattern_C.webp
+│   └── profile/
+│       └── toyokura-shota.jpg   # 代表ポートレート（media-text demo 用）
+├── lp/                          # LPのテキスト系ソース（画像なし）
 │   ├── css/
 │   │   └── style.css            # SWELL子テーマCSS（live、1429行）
-│   ├── content/                 # ライブLPから取得したページ（14本、Markdown変換）
-│   │   ├── top.md               # トップ /
-│   │   ├── company.md           # 会社情報 /company/
-│   │   ├── company-profile.md   # 代表プロフィール /company/profile/
-│   │   ├── contact.md           # 問い合わせ /contact/
-│   │   ├── download.md          # ダウンロード /download/
-│   │   ├── case-howma.md        # HowMa事例 /case/howma/
-│   │   ├── case-makuake.md      # Makuake事例 /case/makuake/
-│   │   ├── case-customer-voice.md # お客様の声 /case/customer-voice/
-│   │   ├── lp-co-creation.md    # 共創LP /lp/co-creation/
-│   │   ├── lp-ai.md             # AI LP /lp/ai/
-│   │   ├── lp-partner.md        # パートナーLP /lp/partner/
-│   │   ├── lp-production.md     # 制作LP /lp/production/
-│   │   ├── blog-judgment-as-a-service.md # 判断をサービスとして
-│   │   └── blog-2026-seo.md     # 2026年SEO
+│   └── content/                 # 実LPコピー（9本、HTML除去済クリーン版）
+│       ├── top.md
+│       ├── company.md
+│       ├── company-profile.md
+│       ├── case-howma.md
+│       ├── case-makuake.md
+│       ├── case-customer-voice.md
+│       ├── lp-co-creation.md
+│       ├── blog-judgment-as-a-service.md
+│       └── blog-2026-seo.md
 │   ├── logos/                   # 支援先クライアントロゴ
 │   │   ├── collabit-logo.png
 │   │   ├── freeweb-logo.png

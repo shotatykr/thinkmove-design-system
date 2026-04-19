@@ -3,20 +3,10 @@
 
 ---
 
-<div class="post_content">
-
-<figure class="wp-block-image size-full is-resized u-mb-ctrl u-mb-30">
-<img src="https://thinkmove.jp/wp-content/uploads/2024/11/thinkmovenotlogo_transparent.png" class="wp-image-454" style="width:800px" decoding="async" srcset="https://thinkmove.jp/wp-content/uploads/2024/11/thinkmovenotlogo_transparent.png 2700w, https://thinkmove.jp/wp-content/uploads/2024/11/thinkmovenotlogo_transparent-300x63.png 300w, https://thinkmove.jp/wp-content/uploads/2024/11/thinkmovenotlogo_transparent-1024x217.png 1024w, https://thinkmove.jp/wp-content/uploads/2024/11/thinkmovenotlogo_transparent-768x162.png 768w, https://thinkmove.jp/wp-content/uploads/2024/11/thinkmovenotlogo_transparent-1536x325.png 1536w, https://thinkmove.jp/wp-content/uploads/2024/11/thinkmovenotlogo_transparent-2048x433.png 2048w" sizes="(max-width: 2700px) 100vw, 2700px" width="2700" height="571" />
-</figure>
-
 スクロールできます
 
-<figure class="wp-block-table is-style-simple u-mb-ctrl u-mb-50" data-table-scrollable="sp">
-<table style="--table-width:800px;">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
+<table>
+
 <tbody>
 <tr>
 <td>社名</td>
@@ -28,14 +18,14 @@
 </tr>
 <tr>
 <td>インボイス番号</td>
-<td><a href="https://www.invoice-kohyo.nta.go.jp/regno-search/detail?selRegNo=1011001166563" data-type="link" data-id="https://www.invoice-kohyo.nta.go.jp/regno-search/detail?selRegNo=1011001166563">T1011001166563</a></td>
+<td><a href="https://www.invoice-kohyo.nta.go.jp/regno-search/detail?selRegNo=1011001166563">T1011001166563</a></td>
 </tr>
 <tr>
 <td>代表取締役</td>
-<td><a href="https://thinkmove.jp/company/profile/" data-type="page" data-id="648">豊藏 翔太</a></td>
+<td><a href="https://thinkmove.jp/company/profile/">豊藏 翔太</a></td>
 </tr>
 <tr>
-<td data-has-cell-bg="1" data-text-color="black"> 設立年月</td>
+<td> 設立年月</td>
 <td>2024年12月</td>
 </tr>
 <tr>
@@ -53,8 +43,8 @@
 <td>アイオイクス株式会社</td>
 </tr>
 <tr>
-<td data-has-cell-bg="1" data-text-color="black"> 所在地</td>
-<td><a href="https://www.google.com/maps/place/%E3%80%92150-0041+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%8B%E8%B0%B7%E5%8C%BA%E7%A5%9E%E5%8D%97%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%91%E2%88%92%EF%BC%94+FPG%E3%83%AA%E3%83%B3%E3%82%AF%E3%82%B9%E7%A5%9E%E5%8D%97+5F/@35.662291,139.7001755,18z/data=!3m1!5s0x60188b586fc76b67:0x635d56f94e6f2961!4m14!1m7!3m6!1s0x60188df1ca8e3a9b:0x5fa820a6678bcad7!2z5p2x5Lqs6YO95riL6LC35Yy656We5Y2X77yR5LiB55uu77yR77yR77yN77yURlBH44Oq44Oz44Kv44K556We5Y2X77yV6ZqO!8m2!3d35.6625228!4d139.7010076!16s%2Fg%2F11wj44yqd5!3m5!1s0x60188ca8840cadd3:0xe53f5b11abd6ef04!8m2!3d35.6625228!4d139.7010076!16s%2Fg%2F11y92x03km?entry=ttu&amp;g_ep=EgoyMDI1MDExNC4wIKXMDSoASAFQAw%3D%3D" data-type="link" data-id="https://www.google.com/maps/place/%E3%80%92150-0041+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%8B%E8%B0%B7%E5%8C%BA%E7%A5%9E%E5%8D%97%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%91%E2%88%92%EF%BC%94+FPG%E3%83%AA%E3%83%B3%E3%82%AF%E3%82%B9%E7%A5%9E%E5%8D%97+5F/@35.662291,139.7001755,18z/data=!3m1!5s0x60188b586fc76b67:0x635d56f94e6f2961!4m14!1m7!3m6!1s0x60188df1ca8e3a9b:0x5fa820a6678bcad7!2z5p2x5Lqs6YO95riL6LC35Yy656We5Y2X77yR5LiB55uu77yR77yR77yN77yURlBH44Oq44Oz44Kv44K556We5Y2X77yV6ZqO!8m2!3d35.6625228!4d139.7010076!16s%2Fg%2F11wj44yqd5!3m5!1s0x60188ca8840cadd3:0xe53f5b11abd6ef04!8m2!3d35.6625228!4d139.7010076!16s%2Fg%2F11y92x03km?entry=ttu&amp;g_ep=EgoyMDI1MDExNC4wIKXMDSoASAFQAw%3D%3D">〒150-0041 東京都渋谷区神南1-11-4 FPGリンクス神南 5F</a></td>
+<td> 所在地</td>
+<td><a href="https://www.google.com/maps/place/%E3%80%92150-0041+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%8B%E8%B0%B7%E5%8C%BA%E7%A5%9E%E5%8D%97%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%91%E2%88%92%EF%BC%94+FPG%E3%83%AA%E3%83%B3%E3%82%AF%E3%82%B9%E7%A5%9E%E5%8D%97+5F/@35.662291,139.7001755,18z/data=!3m1!5s0x60188b586fc76b67:0x635d56f94e6f2961!4m14!1m7!3m6!1s0x60188df1ca8e3a9b:0x5fa820a6678bcad7!2z5p2x5Lqs6YO95riL6LC35Yy656We5Y2X77yR5LiB55uu77yR77yR77yN77yURlBH44Oq44Oz44Kv44K556We5Y2X77yV6ZqO!8m2!3d35.6625228!4d139.7010076!16s%2Fg%2F11wj44yqd5!3m5!1s0x60188ca8840cadd3:0xe53f5b11abd6ef04!8m2!3d35.6625228!4d139.7010076!16s%2Fg%2F11y92x03km?entry=ttu&amp;g_ep=EgoyMDI1MDExNC4wIKXMDSoASAFQAw%3D%3D">〒150-0041 東京都渋谷区神南1-11-4 FPGリンクス神南 5F</a></td>
 </tr>
 <tr>
 <td>電話番号</td>
@@ -62,18 +52,15 @@
 </tr>
 <tr>
 <td>顧問税理士</td>
-<td><a href="https://suehirotax.jp/" data-type="link" data-id="https://suehirotax.jp/">タクスリンク税理士事務所</a><br />
+<td><a href="https://suehirotax.jp/">タクスリンク税理士事務所</a><br />
 <a href="https://suehirotax.jp/office">末廣 大地 税理士</a></td>
 </tr>
 </tbody>
 </table>
-</figure>
 
 **FOUNDING MOTIVATION**
 
 ## 創業動機
-
-<div class="wp-block-media-text__content">
 
 AIによって、一人ひとりの生産性は以前にも増して大きく向上しました。個人の力を拡張した一方で、専門性の高い人間同士がコラボレーションすることでしか成し遂げられない大きなことも依然として多くあります。これからの時代は、少人数でありながらも、専門性を最大限に活かし、必要なリソースを素早く繋げる“**機動力**”が重要だと確信しています。
 
@@ -82,10 +69,6 @@ AIによって、一人ひとりの生産性は以前にも増して大きく向
 特にSEOやAIといったデジタル領域は、技術の進化が早く、常識が絶えず書き換わる分野です。だからこそ「**人として信頼される**」スタンスを大切にしながら、多様な知見を結集して顧客に必要な価値を提供したい――この信念から、シンクムーブ株式会社を創業しました。
 
 私たちがめざすのは、単なる外部支援者ではなく、**顧客組織内に“進化のきっかけ”を共創するパートナー**です。技術・マーケティング・コンサルの垣根を超え、専門家同士が連携する新しいチームの形こそが、今後のビジネスを大きく前進させると信じています。
-
-<figure class="wp-block-media-text__media">
-<img src="https://thinkmove.jp/wp-content/uploads/2025/01/project-completion_01-1024x1009.png" class="wp-image-1285 size-full" decoding="async" srcset="https://thinkmove.jp/wp-content/uploads/2025/01/project-completion_01-1024x1009.png 1024w, https://thinkmove.jp/wp-content/uploads/2025/01/project-completion_01-300x296.png 300w, https://thinkmove.jp/wp-content/uploads/2025/01/project-completion_01-768x757.png 768w, https://thinkmove.jp/wp-content/uploads/2025/01/project-completion_01.png 1478w" sizes="(max-width: 1024px) 100vw, 1024px" width="1024" height="1009" />
-</figure>
 
 **MISSION**
 
@@ -119,8 +102,6 @@ AIによって、一人ひとりの生産性は以前にも増して大きく向
 
 常に「なぜ？」を問い、本質的な課題を捉え、素早く行動する。小さく試し、検証し、改善を重ねることで大きな変化を引き寄せる。
 
-<div class="wp-block-spacer" style="height:12px" aria-hidden="true">
-
 **02**
 
 **Issue Driven Thinking**
@@ -128,8 +109,6 @@ AIによって、一人ひとりの生産性は以前にも増して大きく向
 ―**課題を軸とした思考**―
 
 依頼の背景にある「真の課題」を徹底的に考え抜き、先回りで提案する。「どうすれば顧客にとって最良か」を常に問い、枠にとらわれないアプローチを選ぶ。
-
-<div class="wp-block-spacer" style="height:12px" aria-hidden="true">
 
 **03**
 
@@ -157,17 +136,9 @@ AIによって、一人ひとりの生産性は以前にも増して大きく向
 
 **SLOGAN**
 
-**人の思考とAIで、**\
+**人の思考とAIで、**
 **マーケティングは進化する。**
 ------------------------------
-
-<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center" style="grid-template-columns:30% auto">
-
-<figure class="wp-block-media-text__media">
-<img src="https://thinkmove.jp/wp-content/uploads/2024/11/strategy_01-1013x1024.png" class="wp-image-427 size-full" decoding="async" srcset="https://thinkmove.jp/wp-content/uploads/2024/11/strategy_01-1013x1024.png 1013w, https://thinkmove.jp/wp-content/uploads/2024/11/strategy_01-297x300.png 297w, https://thinkmove.jp/wp-content/uploads/2024/11/strategy_01-768x777.png 768w, https://thinkmove.jp/wp-content/uploads/2024/11/strategy_01.png 1243w" sizes="(max-width: 1013px) 100vw, 1013px" width="1013" height="1024" />
-</figure>
-
-<div class="wp-block-media-text__content">
 
 私たちは、SEOやAI活用、コンテンツ戦略といった“点”の技術を、クライアントのビジネス全体を支える“面”へと拡張することで、飛躍的な成果を創出することを目指しています。
 
@@ -178,15 +149,3 @@ AIによって、一人ひとりの生産性は以前にも増して大きく向
 私たちは、そんな**“点と点をつなぎ、新たな面を描く”**パートナーでありたい。
 
 ステークホルダーとの対話を通じて、本質的なゴールを共有し、必要とあらば組織やプロセスの見直しにも踏み込みます。なぜなら、本当の最適解は、一つの技術や手法だけで完結するものではなく、**「人の思考とAI」という両輪**によって見つけ出されると確信しているからです。
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
