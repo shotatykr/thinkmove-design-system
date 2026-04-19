@@ -220,15 +220,15 @@ thinkmove-design-system/
 
 ## 収録方針
 
-本リポは **system の documentation** であり LP の再現ではない。コンポーネント demo に必要な最小セットのみ保持：
+本リポは **system の documentation** であり LP の再現ではない。
 
-- **Logos** × 4：WORKS component demo 用
-- **Manga** × 3：carousel module の demo 用（LPでは5枚だが、demo には3枚で十分）
-- **Profile** × 1：media-text layout の demo 用
-- **Brand illustration** × 1
-- **Company logo** × 1
+**画像の判断軸**：「その画像が無いと worldview / component demo が成立しないか？」
+- YES → 収録（固有の semantic weight あり）
+- NO → 削除（装飾・重複・文章で代替可能）
 
-LP の full-page screenshot や hero variant などは**収録しない**（既存LPを観察したい場合は [thinkmove.jp](https://thinkmove.jp/) を直接参照）。
+画像の詳細は [assets/README.md](./assets/README.md) に manifest として記載。AI デザインツールはここを参照して「どの画像をいつ使うか」を判断できる。
+
+LP の full-page screenshot / hero variant / 背景ストック写真などは**収録しない**（既存LPを観察したい場合は [thinkmove.jp](https://thinkmove.jp/) を直接参照）。
 
 ## 注記
 
