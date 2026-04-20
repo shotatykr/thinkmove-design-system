@@ -1,0 +1,10 @@
+# Claude Code / AI tool ingestion から除外するファイル
+
+# LP scaffolding — 参照用、ブランド適用には不要
+lp/
+
+# OS / build artifacts
+.DS_Store
+node_modules/
+.env*
+!.env.example

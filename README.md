@@ -1,259 +1,118 @@
 # ThinkMove Design System
 
-シンクムーブ株式会社（[thinkmove.jp](https://thinkmove.jp)）のブランド世界観とデザインシステムの公開リファレンス。AIデザインツール（Pencil 等）・社内レビュー・全デザイン判断の根拠。
+シンクムーブ株式会社（[thinkmove.jp](https://thinkmove.jp)）のブランド世界観とデザインシステムの公開リファレンス。AIデザインツール（Claude Design / Pencil / Figma AI 等）・社内レビュー・全デザイン判断の根拠。
 
 - **事業**: 1-2人マーケティングチーム向け「インハウスマーケティング共創支援」（SEO × AI）
 - **プロダクト**: [tools.thinkmove.jp](https://tools.thinkmove.jp) — SEO/マーケ支援ツール群
-- **思想と実装を分離**: 気分・レトリック・人格は本ドキュメントで固定、色値・余白・radius 等の実装は [tokens/globals.css](./tokens/globals.css) で進化
 
 ---
 
-## 1. 全体を貫く「気分」
+## 🤖 AI tools はここから
 
-### 「冷静な共感」
+**最初に [AGENTS.md](AGENTS.md) を読む。** 読み込み順とタスク別の必要ファイルが書いてある。フル ingestion でも ~33KB に収まるよう設計されている。
 
-静かな切迫感と、隣で聞いてくれる人の安心感が同居する空気。
-
-- 派手なコピーで煽らない
-- 派手なグラフィックで威圧しない
-- でも行間には **「このまま止まったままでいいんですか？」** という静かな問いかけが流れている
-- 叫ばないのに届く設計 — 「大声で売る広告会社」へのアンチテーゼ
-
-**感情に寄り添うが、感情で売らない。**
+| タスク | 読むべきもの |
+|--------|------------|
+| 色・余白・radius を知りたい | [`theme/design.json`](theme/design.json) |
+| ブランドの気分・コピートーン | [`worldview/core.md`](worldview/core.md) |
+| コンサル提案スライドを作る | [`examples/`](examples/) + 上記2つ |
+| 詳細な適用ルール | [`AGENTS.md`](AGENTS.md) |
 
 ---
 
-## 2. コアレトリック（反復される3つの構文）
+## 🧠 世界観の一文
 
-### 2.1 否定の後に差し出す
+> # **「判断が止まっている場所に、隣に座って、問いを一緒に整える人」**
 
-- 「**採用する前に。外注する前に。**」
-- 「**上でも下でもなく、横で一緒に動く**」
-- 「**代わりにやる人ではなく、一緒に前に進める人**」
-- 「**答えを渡す支援ではなく、問いを共につくるパートナー**」
+詳細は [`worldview/core.md`](worldview/core.md) を参照。観察元は [thinkmove.jp](https://thinkmove.jp) の現物通読（2026-04-18、創業者本人による言語化）。
 
-既存の選択肢（採用／外注／上司／部下／納品）を一度**否定**してから、その間に立つ**第三の選択肢**として自分を置く。
+### 思想と実装の分離
 
-### 2.2 動詞を止める（そして動かす）
-
-- 「**施策は回っている。でも、マーケティングは、どこかで止まっている。**」
-- 「**誰にも責められていないのに、進められない。**」
-- 「**止まっていた時間が動き出す。**」
-
-「止まる」「詰まる」「進まない」という動詞が頻出。提供価値は常に **「動き出させること」**。社名 ThinkMove（Think & Move）がここに直結。
-
-### 2.3 関係性で価値を定義する
-
-- 「稼働時間を買う」のではなく **「判断が進むことを買う」**
-- 「価格差は、会議回数ではなく、**文脈をどこまで持って伴走するか**の差」
-- **「関与の深さ」** が提供価値の単位
-
----
-
-## 3. 想定読者 — 過去の自分へのラブレター
-
-> **「1〜2人体制の事業会社マーケ担当。経営と現場の間に挟まれて、Slackを開いても相談できる相手がいない人。」**
-
-創業者自身の過去の自分へのラブレターとして設計されている。「誰を助けないか」（3名以上のチームは対象外）を明言することで「誰を助けるか」の輪郭が鋭くなる。
-
----
-
-## 4. 差別化の置き方 — 第四の場所
-
-| 既存カテゴリ | 欠点 |
-|------------|------|
-| 採用 | 文脈は溜まるが立ち上がりが遅く固定費が重い |
-| 制作会社・代理店 | スコープ固定で柔軟性がない |
-| コンサル | 叩き台を作らない、高い |
-| **ThinkMove** | **文脈を持ち、即週動き、叩き台も作り、月20〜40万** |
-
-既存の3カテゴリから等距離に離れた**第四の場所**に自社を置く。
-
----
-
-## 5. 価値の物差しの張り替え
-
-| 通常 | ThinkMove |
-|------|-----------|
-| 数字の成果（PV・CV・順位） | **判断の質** |
-| 稼働量（時間） | **関与の深さ** |
-| 納品物 | **文脈の蓄積** |
-
----
-
-## 6. 語り手の人格
-
-### 「高い専門性を持ちながら、威圧しないプロ」
-
-- 偉そうにしない。煽らない。断定しすぎない（「〜かもしれません」の多用）
-- でも踏み込むべきところは踏み込む（「3名以上は対象外」「ひとりで抱え込むな」）
-
-**専門性は高いが偉そうじゃない、熱量あるけど押し付けない。**
-
----
-
-## 7. 言葉選びの癖 — 造語戦略
-
-既存のマーケ業界用語を避け、**自社の語彙で現象を指し示す**。
-
-| 造語・言い換え | なぜこの言葉か |
-|----|------|
-| **共創型R&D** | 単なる「支援」ではなく、研究開発性を帯びた営み |
-| **問いの整流** | 整理ではなく、流れを整える |
-| **インハウスマーケティング共創支援** | ありそうでない、独自の括り |
-| **判断の型** | ノウハウやテンプレでなく「型」 |
-| **文脈の蓄積** | 比較表での差別化の軸 |
-| **同期セッション** | MTGや定例ではなく、非同期との対比で |
-| **叩き台の作成** | 成果物ではなく「叩き台」— 思い切り |
-
----
-
-## 8. 視覚言語
-
-数値は [tokens/globals.css](./tokens/globals.css) を正とする。ここでは**役割の意味**のみ。
-
-### 8.1 配色
-
-- **ネイビー基調**（落ち着き、信頼、夜の思考時間）
-- **白の余白が多い** — **「余白の主権」を自社サイトで実践**
-- **Teal** = CTA 専任（前進、共創）
-- **Orange** = 限定ハイライト（広面では使わない、CTAには絶対使わない）
-- 比率目安: 白70% / Navy 15% / Gray 10% / Teal 4% / Orange 1%
-
-### 8.2 イラスト
-
-- Gemini で生成した柔らかい線・淡い色合いのシーン描写
-- 擬人化・感情表現は控えめ
-- **「誰かの日常の一コマ」** として差し込まれる
-
-### 8.3 写真 — 属人性を前に出す
-
-- 豊藏本人のオフィス背景ポートレートが会社の顔として繰り返し登場
-- 属人性を隠さず、むしろ前に出す
-- **「この人がやっている会社」という透明性が軸**
-
-### 8.4 4コマ漫画 — 軽い器に入れる
-
-- シリアスな課題を、漫画という軽い器に入れる
-- **「重たい話を、重たく伝えない」** というブランドスタンス
-
-### 8.5 トーンの基準
-
-派手さはないが、安っぽくもない。
-
-> **「良いコンサル資料のような清潔感」**
-
-### 8.6 形状・シャドウ・モーション
-
-- **角丸（8〜20px、4段階）**: 親しみやすさ
-- **shadow-as-border（Vercel流）**: 境界は太い線ではなく微かな浮きで示す
-- **動きは意味があるときだけ**
-  - 許可: フェードイン／フェードアップ／ホバー浮き／カウントアップ
-  - 禁止: パララックス／自動再生／点滅／バウンス／派手なローディング
-
----
-
-## 9. 世界観を一文に圧縮すると
-
-> ## 「判断が止まっている場所に、隣に座って、問いを一緒に整える人」
-
-これが世界観の中心。サイトのあらゆる要素（コピー・イラスト・料金設計・比較表・FAQ）が、この一文を**別の角度から説明し直している**構造。
-
----
-
-## 10. 検証基準
-
-### 言葉
-
-1. **否定→差し出しの構文**があるか
-2. **「止まっている／動き出す」**のメタファーが機能しているか
-3. **「関与の深さ」「文脈の蓄積」**など関係性で価値を定義しているか
-4. **造語**を使って既存業界用語から逃げているか
-5. **AI臭**がない（「〜と言えるでしょう」「〜が重要です」がゼロ）
-6. **著者特定**できる（匿名でも豊藏が書いたと分かる）
-
-### 視覚
-
-1. 3秒で「静かな信頼」が伝わる
-2. 「落ち着く」「この人なら」と感じる
-3. 他のコンサル会社・SaaSと違うと感じる
-4. 閉じた後も「静かで、でも切迫感があった」と覚えている
+| 分類 | ソース |
+|------|--------|
+| 気分・レトリック・人格・言葉 | [`worldview/core.md`](worldview/core.md) — 固定する |
+| 色・余白・shadow・radius | [`theme/globals.css`](theme/globals.css) / [`theme/design.json`](theme/design.json) — 進化する |
+| コピー禁則・著者特定テスト | [`worldview/voice.md`](worldview/voice.md) |
+| スライドレイアウト型 | [`examples/`](examples/) |
 
 ---
 
 ## リポジトリ構成
 
-観察元である **thinkmove.jp LP** の素材を主に収録。
-
 ```
 thinkmove-design-system/
-├── README.md                    # 世界観・思想の核（このファイル）
-├── LICENSE                      # ライセンス（All rights reserved + AI参照許可）
-├── assets/                      # 画像すべてここに集約
-│   ├── logo.png                 # 公式ロゴ（navy accent、canonical、2700×571）
-│   ├── logos/                   # 支援先クライアントロゴ
-│   │   ├── collabit-logo.png
-│   │   ├── freeweb-logo.png
-│   │   ├── makuake_logo.png
-│   │   └── zigexn-logo.png
-│   ├── manga/                   # 4コマ漫画（carousel module demo 用3枚）
-│   │   ├── 4koma_comic_A.webp
-│   │   ├── 4koma_pattern_B.webp
-│   │   └── 4koma_pattern_C.webp
-│   └── profile/
-│       └── toyokura-shota.jpg   # 代表ポートレート（media-text demo 用）
-├── lp/                          # LPのテキスト系ソース（画像なし）
-│   ├── css/
-│   │   └── style.css            # SWELL子テーマCSS（live、1429行）
-│   └── content/                 # 実LPコピー（9本、HTML除去済クリーン版）
-│       ├── top.md
-│       ├── company.md
-│       ├── company-profile.md
-│       ├── case-howma.md
-│       ├── case-makuake.md
-│       ├── case-customer-voice.md
-│       ├── lp-co-creation.md
-│       ├── blog-judgment-as-a-service.md
-│       └── blog-2026-seo.md
-└── sync.sh                      # LP本体から再同期（要 pandoc）
+├── AGENTS.md                # AI tool 向け entry point（読み順・適用ルール）
+├── README.md                # このファイル（人間向け）
+├── .claudeignore            # AI ingestion 除外設定
+├── LICENSE
+│
+├── theme/                   # 機械可読トークン（実装の正）
+│   ├── globals.css          # CSS変数 + 主要コンポーネント
+│   └── design.json          # W3C Design Tokens 形式
+│
+├── worldview/               # 思想の正
+│   ├── core.md              # 世界観 v3（観察元: thinkmove.jp）
+│   └── voice.md             # コピーtone・造語・do/don't
+│
+├── examples/                # コンサル資料の型
+│   ├── README.md
+│   └── slides/              # title-slide / two-column / quote-card / case-study / agenda
+│
+├── assets/                  # 画像（manifest 付き）
+│   ├── README.md            # AI 向け semantic manifest
+│   ├── logo.png             # 公式ロゴ（navy accent、canonical）
+│   ├── logos/               # 支援先クライアントロゴ
+│   ├── manga/               # 4コマ漫画
+│   └── profile/             # 代表ポートレート
+│
+├── lp/                      # thinkmove.jp の scaffolding（参照用）
+│   ├── content/             # LPコピー実例（9 markdown）
+│   └── css/style.css        # SWELL子テーマ全体
+│
+└── sync.sh                  # 内部モノレポから再同期（要 pandoc）
 ```
 
-## 収録方針
+---
 
-本リポは **system の documentation** であり LP の再現ではない。
+## 視覚言語の核（詳細は worldview §8）
 
-**画像の判断軸**：「その画像が無いと worldview / component demo が成立しないか？」
-- YES → 収録（固有の semantic weight あり）
-- NO → 削除（装飾・重複・文章で代替可能）
+- **配色**: 白70% / Navy 15% / Gray 10% / Teal 4% / Orange 1%
+- **CTA**: 必ず teal（`color.cta`）。orange を CTA に使うのは禁止
+- **shadow-as-border**（Vercel流）: 太い border ではなく微かな浮きで境界を示す
+- **radius 4段スケール**: sm 8 / md 12 / lg 16 / xl 20
+- **動きは意味があるときだけ**: parallax/autoplay/blink/bounce 禁止
 
-画像の詳細は [assets/README.md](./assets/README.md) に manifest として記載。AI デザインツールはここを参照して「どの画像をいつ使うか」を判断できる。
-
-LP の full-page screenshot / hero variant / 背景ストック写真などは**収録しない**（既存LPを観察したい場合は [thinkmove.jp](https://thinkmove.jp/) を直接参照）。
+---
 
 ## 注記
 
 ### Orange アクセントについて
 
-- `assets/logo-white.png`（orange accent付き）は **削除済み**
-- `assets/logo.png` が唯一の canonical ロゴ（navy accent、透明PNG、2700×571）
+- `--tm-accent`（orange `#f97316`）は **限定ハイライト専用**。広面禁止、CTA 禁止
+- 現状の比率目安は 1%。これを超えたら worldview 違反
 
-### CSS のブランド齟齬
+### `lp/css/style.css` の負債
 
-`lp/css/style.css` は **thinkmove.jp の live SWELL子テーマ** から取得した実装。ただし `--tm-accent: #ED8936`（orange）が残存しており、v3世界観「orange は限定ハイライト、広面では使わない」と齟齬がある。**これは LP 側の技術的負債**であり、今後のブランドレビューで解消すべき項目。
+`lp/` 配下の SWELL子テーマ CSS には旧トークン（`#ED8936` 等）が残存しており、`theme/` の v2 トークンとは齟齬がある。**`theme/` が実装の正**。`lp/` はあくまで thinkmove.jp の現物 scaffolding として保持しているだけで、ブランド適用の根拠にはしない。
 
 ### Content について
 
-`lp/content/` には **ライブ thinkmove.jp からクロールした 14 ページ**を Markdown 変換して収録。`sync.sh` で再取得可能（要 `pandoc`）。モノレポ内の未公開ドラフト（`projects/thinkmove.jp/website-content/*.md`）は**含めない方針**。
+`lp/content/` には thinkmove.jp からクロールした 9 ページを Markdown 変換して収録。`sync.sh` で再取得可能（要 `pandoc`）。
 
 ---
 
 ## 同期
 
-このリポは **参照用のスナップショット**。真のソースは内部モノレポの `projects/thinkmove.jp/`（LP素材の倉庫）。
-LP側の素材を変更したら内部で編集 → `./sync.sh` → push で追従。
+このリポは **参照用のスナップショット**。真のソースは内部モノレポ:
 
-LP本体は WordPress + エックスサーバーで配信。CSSや画像は `projects/thinkmove.jp/` にスナップショットされている。
+| 公開リポ側 | 内部モノレポ側（source of truth） |
+|----------|---------------------------------|
+| `worldview/core.md` | `knowledge/strategy/brand-worldview-v3.md` |
+| `theme/globals.css` | `projects/thinkmove-tools/app/globals.css` の `:root` 抽出 |
+| `lp/` | `projects/thinkmove.jp/` + thinkmove.jp ライブクロール |
+
+`./sync.sh` で再同期。
 
 ---
 
-© 2026 ThinkMove Inc. / @shotatykr
+© 2026 ThinkMove Inc. / @shotatykr — ライセンスは [LICENSE](LICENSE) 参照。

@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 # thinkmove-design-system/sync.sh
-# 本体モノレポ（projects/thinkmove.jp/）と LP本体から最新素材を取り込む
+# 内部モノレポ + thinkmove.jp ライブから authority files / 素材を取り込む
 
 set -euo pipefail
 
 MONOREPO="${THINKMOVE_MONOREPO:-$HOME/projects/thinkmove}"
 LP_DIR="$MONOREPO/projects/thinkmove.jp"
+WORLDVIEW_SRC="$MONOREPO/knowledge/strategy/brand-worldview-v3.md"
+TOOLS_CSS_SRC="$MONOREPO/projects/thinkmove-tools/app/globals.css"
 SELF_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 if [ ! -d "$LP_DIR" ]; then
@@ -14,23 +16,49 @@ if [ ! -d "$LP_DIR" ]; then
   exit 1
 fi
 
-echo "🔄 Syncing from $LP_DIR + thinkmove.jp (live) ..."
+# ディレクトリ準備
+mkdir -p \
+  "$SELF_DIR/assets/logos" \
+  "$SELF_DIR/assets/profile" \
+  "$SELF_DIR/assets/manga" \
+  "$SELF_DIR/lp/css" \
+  "$SELF_DIR/lp/content" \
+  "$SELF_DIR/theme" \
+  "$SELF_DIR/worldview"
 
-# LP本体URL
+echo "🔄 Syncing from monorepo + thinkmove.jp (live) ..."
+
 BASE="https://thinkmove.jp"
 TH="$BASE/wp-content/themes/swell_child/img"
 UP="$BASE/wp-content/uploads"
 
-# Canonical logo (LP公式、navy accent)
+# ── Authority: worldview core (思想の正) ──
+if [ -f "$WORLDVIEW_SRC" ]; then
+  cp "$WORLDVIEW_SRC" "$SELF_DIR/worldview/core.md"
+  # 内部参照を公開リポ用に書き換え
+  sed -i '' \
+    -e 's|projects/thinkmove-tools/app/globals.css|../theme/globals.css|g' \
+    -e 's|^\*\*前版\*\*:.*$||' \
+    "$SELF_DIR/worldview/core.md"
+  echo "  ✓ worldview/core.md (from $WORLDVIEW_SRC)"
+else
+  echo "  ⚠ worldview source not found: $WORLDVIEW_SRC"
+fi
+
+# ── Authority: theme tokens (実装の正) ──
+# tools/app/globals.css から :root と主要部分を抽出するのは sed で困難なため、
+# theme/globals.css は手作り維持。tools 側の更新時は手動で同期。
+echo "  ⓘ theme/globals.css は手動維持（tools/app/globals.css から抽出）"
+
+# ── LP scaffolding: canonical logo ──
 curl -fsSL "$UP/2024/11/thinkmovenotlogo_transparent.png" -o "$SELF_DIR/assets/logo.png"
 echo "  ✓ assets/logo.png"
 
-# LP CSS (live本体から = SWELL子テーマ)
+# ── LP scaffolding: SWELL子テーマ CSS (旧トークン残存、参照のみ) ──
 curl -fsSL "$BASE/wp-content/themes/swell_child/style.css" -o "$SELF_DIR/lp/css/style.css"
-echo "  ✓ lp/css/style.css (live swell_child/style.css)"
+echo "  ✓ lp/css/style.css (live swell_child)"
 
-# LP content (live本体から、9ページ) — 要 pandoc: brew install pandoc
-# 核レベルのHTMLクリーン（div/span/figure unwrap、style/script除去、a簡素化）
+# ── LP scaffolding: content (9ページ、HTMLクリーン版) ──
 if command -v pandoc >/dev/null 2>&1; then
   declare -A CONTENT_PAGES=(
     [top]="/"
@@ -50,26 +78,19 @@ if command -v pandoc >/dev/null 2>&1; then
     md=$(echo "$html" | pandoc -f html -t gfm --wrap=none 2>/dev/null | python3 -c "
 import sys, re
 c = sys.stdin.read()
-# <style>/<script> block removal
 c = re.sub(r'<style\b[^>]*>.*?</style>', '', c, flags=re.DOTALL|re.I)
 c = re.sub(r'<script\b[^>]*>.*?</script>', '', c, flags=re.DOTALL|re.I)
-# Structural tags unwrap
 structural = r'(?:div|span|figure|figcaption|section|article|header|footer|nav|main|aside|colgroup|col)'
 c = re.sub(rf'</?{structural}\b[^>]*>', '', c)
-# <a> simplify to href-only
 def sa(m):
   h = re.search(r'href=\"([^\"]*)\"', m.group(0))
   return f'<a href=\"{h.group(1)}\">' if h else ''
 c = re.sub(r'<a\s+[^>]*>', sa, c)
-# Table/list attrs strip
 for tag in ['table','thead','tbody','tfoot','tr','th','td','p','ul','ol','li','blockquote']:
   c = re.sub(rf'<{tag}\s+[^>]*>', f'<{tag}>', c)
-# img/svg/iframe removal
 c = re.sub(r'<(?:img|svg|iframe|embed|source|picture)\b[^>]*/?>', '', c)
 c = re.sub(r'<svg\b[^>]*>.*?</svg>', '', c, flags=re.DOTALL)
-# Markdown image syntax removal
 c = re.sub(r'!\[[^\]]*\]\([^)]*\)', '', c)
-# Line break & blank line normalize
 c = re.sub(r'\\\n', '\n', c)
 c = re.sub(r'\n\s*\n\s*(\n\s*)+', '\n\n', c)
 c = re.sub(r'<a\s+href=\"[^\"]*\">\s*</a>', '', c)
@@ -86,27 +107,26 @@ else
   echo "  ⚠ pandoc not found — skipping content sync. Install: brew install pandoc"
 fi
 
-# Client logos (モノレポ + LPテーマ)
-cp "$LP_DIR/assets/logos/collabit-logo.png" "$SELF_DIR/lp/logos/collabit-logo.png"
-cp "$LP_DIR/assets/logos/makuake_logo.png" "$SELF_DIR/lp/logos/makuake_logo.png"
+# ── Brand assets: client logos (4社) ──
+for src in collabit-logo makuake_logo; do
+  if [ -f "$LP_DIR/assets/logos/${src}.png" ]; then
+    cp "$LP_DIR/assets/logos/${src}.png" "$SELF_DIR/assets/logos/${src}.png"
+  fi
+done
 for f in freeweb-logo zigexn-logo; do
-  curl -fsSL "$TH/clients/$f.png" -o "$SELF_DIR/lp/logos/$f.png"
+  curl -fsSL "$TH/clients/$f.png" -o "$SELF_DIR/assets/logos/$f.png"
 done
-echo "  ✓ lp/logos/*.png (4 clients)"
+echo "  ✓ assets/logos/*.png (4 clients)"
 
-# Profile photo (1 portrait only for media-text demo)
-curl -fsSL "$UP/2024/11/IMG_3759.jpg" -o "$SELF_DIR/lp/profile/toyokura-shota.jpg"
-echo "  ✓ lp/profile/toyokura-shota.jpg"
+# ── Brand assets: profile portrait (media-text demo) ──
+curl -fsSL "$UP/2024/11/IMG_3759.jpg" -o "$SELF_DIR/assets/profile/toyokura-shota.jpg"
+echo "  ✓ assets/profile/toyokura-shota.jpg"
 
-# Brand illustration (LP本体から)
-curl -fsSL "$UP/2024/11/4.png" -o "$SELF_DIR/lp/brand/desk-scene.png"
-echo "  ✓ lp/brand/desk-scene.png"
-
-# 4コマ漫画 (carousel demo 用3枚のみ、LPテーマから)
+# ── Brand assets: 4コマ漫画 (carousel demo 用3枚) ──
 for f in 4koma_comic_A 4koma_pattern_B 4koma_pattern_C; do
-  curl -fsSL "$TH/manga/$f.webp" -o "$SELF_DIR/lp/manga/$f.webp"
+  curl -fsSL "$TH/manga/$f.webp" -o "$SELF_DIR/assets/manga/$f.webp"
 done
-echo "  ✓ lp/manga/4koma_*.webp (3 files)"
+echo "  ✓ assets/manga/4koma_*.webp (3 files)"
 
 echo ""
 echo "✅ Sync complete. Review with: git diff"
