@@ -14,6 +14,12 @@ worldview と theme は「色とコピー」を決めるが、**「スライド�
 | [`slides/case-study.md`](slides/case-study.md) | 事例: claim → evidence(数値) → action |
 | [`slides/agenda.md`](slides/agenda.md) | 目次・全体像。5項目以下 |
 
+## 資料テイスト一覧
+
+| ディレクトリ | 用途 |
+|-------------|------|
+| [`slide-tastes/`](slide-tastes/) | 提案書、診断資料、事例、研修、登壇の5テイスト。ロゴ位置・情報密度・imagegen利用範囲まで固定 |
+
 ## 使い方（AI tools 向け）
 
 1. ユーザーが「ThinkMove のコンサル提案スライド作って」と言ったら、まず `slides/agenda.md` の型でアジェンダを置く

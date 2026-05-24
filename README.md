@@ -16,6 +16,7 @@
 | 色・余白・radius を知りたい | [`theme/design.json`](theme/design.json) |
 | ブランドの気分・コピートーン | [`worldview/core.md`](worldview/core.md) |
 | コンサル提案スライドを作る | [`examples/`](examples/) + 上記2つ |
+| 連続資料のFew-shotを見る | [`references/slide-fewshots/ai-management-loop.md`](references/slide-fewshots/ai-management-loop.md) |
 | 詳細な適用ルール | [`AGENTS.md`](AGENTS.md) |
 
 ---
@@ -57,6 +58,9 @@ thinkmove-design-system/
 ├── examples/                # コンサル資料の型
 │   ├── README.md
 │   └── slides/              # title-slide / two-column / quote-card / case-study / agenda
+│
+├── references/              # 完成形に近い参照資料・Few-shot
+│   └── slide-fewshots/      # 連続デッキの勝ちパターン
 │
 ├── assets/                  # 画像（manifest 付き）
 │   ├── README.md            # AI 向け semantic manifest
