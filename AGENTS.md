@@ -15,9 +15,10 @@
 | 3 | **[theme/design.json](theme/design.json)** | 3KB | 機械可読トークン（color/radius/shadow/motion） |
 | 4 | **[theme/globals.css](theme/globals.css)** | 5KB | CSS実装（変数定義 + 主要コンポーネント） |
 | 5 | **[worldview/voice.md](worldview/voice.md)** | 3KB | コピー禁則・著者特定テスト（コピー生成時のみ） |
-| 6 | **[examples/](examples/)** | 5KB+ | スライド型、資料テイスト、Few-shot（資料生成時のみ） |
-| 7 | **[references/](references/)** | 追加参照 | 完成形に近い参照資料（必要時） |
-| 8 | **[assets/README.md](assets/README.md)** | 3KB | 画像 manifest（画像参照時のみ） |
+| 6 | **[slides/README.md](slides/README.md)** | 入口 | スライドの論理・制作工程・画像・QA（資料生成時は必須） |
+| 7 | **[examples/](examples/)** | 5KB+ | スライド型、資料テイスト、Few-shot（資料生成時のみ） |
+| 8 | **[references/](references/)** | 追加参照 | 完成形に近い参照資料（必要時） |
+| 9 | **[assets/README.md](assets/README.md)** | 3KB | 画像 manifest（画像参照時のみ） |
 
 **フル ingestion でも ~33KB**。
 
@@ -29,7 +30,7 @@
 |--------|----------------|
 | 「ブランドカラーは？」 | `theme/design.json` のみ |
 | Hero / LP セクション生成 | `theme/design.json` + `theme/globals.css` + `worldview/core.md` §8 |
-| コンサル提案スライド | `references/slide-fewshots/ai-management-loop.md` + `examples/slide-tastes/few-shot.md` + `examples/` + `theme/design.json` + `worldview/voice.md` |
+| コンサル提案スライド | `slides/README.md` + `slides/production-guide.md` + `references/slide-fewshots/ai-management-loop.md` + `examples/slide-tastes/few-shot.md` + `theme/design.json` + `worldview/voice.md` |
 | ブログ・記事の本文 | `worldview/core.md` + `worldview/voice.md` |
 | ロゴ・画像配置 | `assets/README.md` + `worldview/core.md` §8.3-8.5 |
 | 4コマ漫画風イラスト | `assets/manga/` + `worldview/core.md` §8.4 |
@@ -58,12 +59,15 @@
 - 否定→差し出し / 止まる→動き出す / 関係性で価値定義 のいずれかを必ず1つ使う
 
 ### Slides
+- 資料生成では **[slides/README.md](slides/README.md)** を入口として、production guide・image policy・QAを必ず適用する
 - 資料生成では **[examples/slide-tastes/few-shot.md](examples/slide-tastes/few-shot.md)** を必ず読む
 - 連続デッキの完成形は **[references/slide-fewshots/ai-management-loop.md](references/slide-fewshots/ai-management-loop.md)** を参照する
 - 現在の主Few-shotは Diagnostic Cockpit と Workshop Guide
 - 世界観は「実務密度のある冷静な共感」として扱う
 - ロゴは原則右上。GPT-image2 にロゴを描かせず、公式 `assets/logo.png` を後処理で合成する
 - 余白だけの綺麗なポスターではなく、数字・手順・判断材料・次の一手が見える資料にする
+- 画像は `slides/image-policy.md` の優先順位に従い、ロゴ・正確な数字・グラフ・実在UIを生成AIに描かせない
+- 出力前に `slides/qa-checklist.md` を通し、全ページをレンダリングして目視確認する
 
 ---
 
