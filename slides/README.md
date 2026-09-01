@@ -20,19 +20,19 @@ ThinkMoveの提案資料・分析報告・研修・登壇資料を、AIツール
 8. 画像を使う場合は[`image-policy.md`](image-policy.md)と[`../assets/README.md`](../assets/README.md)
 9. 出力前に[`qa-checklist.md`](qa-checklist.md)
 
-依頼時のテンプレートは[\`prompt.md\`](prompt.md)を使う。
+依頼時のテンプレートは[`prompt.md`](prompt.md)を使う。
 
 ## Quick Start
 
 毎回の依頼は、次の一文で開始できる。
 
-\`\`\`text
+```text
 content.mdからシンクムーブの資料を作って。
 shotatykr/thinkmove-design-systemのAGENTS.mdとslides/README.mdを入口に、
 必要なガイド・Few-shot・assetsを参照し、全ページをQAしてください。
-\`\`\`
+```
 
-GitHub connectorで画像を直接参照できない場合は、AI agentが一時ディレクトリへ必要なassetsを取得する。詳細は[\`prompt.md\`](prompt.md)を参照する。
+GitHub connectorで画像を直接参照できない場合は、AI agentが一時ディレクトリへ必要なassetsを取得する。詳細は[`prompt.md`](prompt.md)を参照する。
 
 ## 30秒版
 
