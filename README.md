@@ -15,7 +15,7 @@
 |--------|------------|
 | 色・余白・radius を知りたい | [`theme/design.json`](theme/design.json) |
 | ブランドの気分・コピートーン | [`worldview/core.md`](worldview/core.md) |
-| コンサル提案スライドを作る | [`examples/`](examples/) + 上記2つ |
+| コンサル提案スライドを作る | [`slides/README.md`](slides/README.md) から開始 |
 | 連続資料のFew-shotを見る | [`references/slide-fewshots/ai-management-loop.md`](references/slide-fewshots/ai-management-loop.md) |
 | 詳細な適用ルール | [`AGENTS.md`](AGENTS.md) |
 
@@ -54,6 +54,13 @@ thinkmove-design-system/
 ├── worldview/               # 思想の正
 │   ├── core.md              # 世界観 v3（観察元: thinkmove.jp）
 │   └── voice.md             # コピーtone・造語・do/don't
+│
+├── slides/                  # スライド制作の正本（論理・画像・QA・依頼テンプレート）
+│   ├── README.md            # スライド制作の入口
+│   ├── production-guide.md  # ストーリー・情報設計・レイアウト
+│   ├── image-policy.md      # 画像の選択・生成・合成ルール
+│   ├── qa-checklist.md      # 出力前の目視QA
+│   └── prompt.md            # 毎回使う生成依頼テンプレート
 │
 ├── examples/                # コンサル資料の型
 │   ├── README.md
